@@ -1,0 +1,36 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Next.js Preview",
+			"type": "shell",
+			"command": "npx next preview",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Build Next.js Project",
+			"type": "shell",
+			"command": "npx next build",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run Next.js Preview",
+			"type": "shell",
+			"command": "npx next preview",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Build Next.js Project",
+			"type": "shell",
+			"command": "npx next build",
+			"isBackground": false,
+			"group": "build"
+		}
+	]
+}

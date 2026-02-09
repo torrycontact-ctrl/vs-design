@@ -1,0 +1,318 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================================================
+   Tailwind v4 Theme – wire CSS variables into utility classes
+   ============================================================ */
+@theme inline {
+  /* Font families */
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+
+  /* Colors */
+  --color-foreground: var(--color-fg);
+  --color-background: var(--color-bg);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+  --color-surface: var(--color-white);
+
+  /* Breakpoints */
+  --breakpoint-sm: 390px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+}
+
+/* ============================================================
+   Base styles
+   ============================================================ */
+body {
+  margin: 0;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+  background-image: linear-gradient(180deg, #FFF9FE 0%, #F4C5F7 44.27%, #CFCDFA 100%) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background-image: none !important;
+  background-color: #000 !important;
+}
+
+/* Smooth dark-mode transitions */
+*,
+*::before,
+*::after {
+  transition: background-color var(--transition-base),
+              color var(--transition-base),
+              border-color var(--transition-base);
+}
+
+/* Instant color switch (no transition delay) */
+.no-transition,
+.no-transition * {
+  transition: none !important;
+}
+
+/* Instant color switch but preserve other transitions */
+.no-color-transition *,
+.no-color-transition {
+  transition-property: opacity, transform, background-color, border-color !important;
+}
+
+/* ============================================================
+   Typography – text styles from Figma
+   ============================================================ */
+
+/* hero — Instrument Serif Regular, 96px/96px, tracking -0.8px */
+.hero {
+  font-family: var(--font-serif), serif;
+  font-size: var(--font-size-8xl);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-size-8xl);
+  letter-spacing: var(--font-tracking-tight);
+}
+
+/* hero-italic — Instrument Serif Italic, 96px/96px, tracking -0.8px */
+.hero-italic {
+  font-family: var(--font-serif), serif;
+  font-size: var(--font-size-8xl);
+  font-style: italic;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-size-8xl);
+  letter-spacing: var(--font-tracking-tight);
+}
+
+/* h1 — Instrument Serif Regular, 72px/72px, tracking -0.8px */
+.h1 {
+  font-family: var(--font-serif), serif;
+  font-size: var(--font-size-7xl);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-size-7xl);
+  letter-spacing: var(--font-tracking-tight);
+}
+
+/* h2 — Instrument Serif Regular, 48px/48px */
+.h2 {
+  font-family: var(--font-serif), serif;
+  font-size: var(--font-size-5xl);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-size-5xl);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+/* h2-grey — Instrument Serif Regular, 48px/48px, tracking -0.8px, grey color */
+.h2-grey {
+  font-family: var(--font-serif), serif;
+  font-size: var(--font-size-5xl);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-size-5xl);
+  letter-spacing: var(--font-tracking-tight);
+  color: var(--color-gray-400);
+}
+
+/* h3 — Instrument Serif Regular, 36px/40px */
+.h3 {
+  font-family: var(--font-serif), serif;
+  font-size: var(--font-size-4xl);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-10);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+/* h4 — Instrument Serif Regular, 30px/36px */
+.h4 {
+  font-family: var(--font-serif), serif;
+  font-size: var(--font-size-3xl);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-9);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+/* h5-caps — PP Neue Montreal Medium, 18px/28px, uppercase */
+.h5-caps {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--font-size-lg);
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-leading-7);
+  letter-spacing: var(--font-tracking-normal);
+  text-transform: uppercase;
+}
+
+/* number-serif — Instrument Serif Regular, 24px/32px */
+.number-serif {
+  font-family: var(--font-serif), serif;
+  font-size: var(--font-size-2xl);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-8);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+/* number — Instrument Serif Regular, 18px/28px */
+.number {
+  font-family: var(--font-serif), serif;
+  font-size: var(--font-size-lg);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-7);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+/* p1 — PP Neue Montreal Book, 20px/28px */
+.p1 {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-7);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+/* p1-bold — PP Neue Montreal Medium, 20px/28px */
+.p1-bold {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-leading-7);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+/* p2 — PP Neue Montreal Book, 18px/28px */
+.p2 {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--font-size-lg);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-7);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+/* p2-bold — PP Neue Montreal Medium, 18px/28px */
+.p2-bold {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--font-size-lg);
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-leading-7);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+/* p3 — PP Neue Montreal Book, 16px/24px */
+.p3 {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--font-size-base);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-6);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+/* link-black — PP Neue Montreal Book, 16px/24px, uppercase */
+.link-black {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--font-size-base);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-6);
+  letter-spacing: var(--font-tracking-normal);
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+.dark .link-black {
+  color: var(--color-white);
+}
+
+/* link — PP Neue Montreal Book, 16px/24px, uppercase */
+.link {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--font-size-base);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-6);
+  letter-spacing: var(--font-tracking-normal);
+  text-transform: uppercase;
+}
+
+/* caption-sm — PP Neue Montreal Regular, 14px/20px */
+.caption-sm {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--font-size-sm);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-5);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+/* case-caption — PP Neue Montreal Book, 18px/28px */
+.case-caption {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--font-size-lg);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-7);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+/* caption-tag-caps — PP Neue Montreal Book, 16px/24px, uppercase */
+.caption-tag-caps {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--font-size-base);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-6);
+  letter-spacing: var(--font-tracking-normal);
+  text-transform: uppercase;
+}
+
+/* btn-primary — primary CTA button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-leading-6);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-custom-butter-yellow);
+  color: var(--color-black);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.dark .btn-primary {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.dark .btn-primary:hover {
+  background-color: var(--color-custom-butter-yellow);
+  color: var(--color-black);
+}

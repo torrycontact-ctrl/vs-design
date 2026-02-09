@@ -1,0 +1,189 @@
+/* ============================================================
+   Design Tokens – 1:1 from Figma variables
+   ============================================================ */
+
+:root {
+  /* -----------------------------------------------------------
+     font/family  (loaded via next/font as CSS vars)
+     font/family/sans  → PP Neue Montreal  → var(--font-sans)
+     font/family/serif → Instrument Serif  → var(--font-serif)
+     ----------------------------------------------------------- */
+
+  /* -----------------------------------------------------------
+     font/size
+     ----------------------------------------------------------- */
+  --font-size-sm:  14px;   /* font/size/sm  */
+  --font-size-base: 16px;  /* font/size/base */
+  --font-size-lg:  18px;   /* font/size/lg  */
+  --font-size-xl:  20px;   /* font/size/xl  */
+  --font-size-2xl: 24px;   /* font/size/2xl */
+  --font-size-3xl: 30px;   /* font/size/3xl */
+  --font-size-4xl: 36px;   /* font/size/4xl */
+  --font-size-5xl: 48px;   /* font/size/5xl */
+  --font-size-7xl: 72px;   /* font/size/7xl */
+  --font-size-8xl: 96px;   /* font/size/8xl */
+
+  /* -----------------------------------------------------------
+     font/weight
+     ----------------------------------------------------------- */
+  --font-weight-normal: 400;  /* font/weight/normal */
+  --font-weight-medium: 500;  /* font/weight/medium */
+  --font-weight-black:  900;  /* font/weight/black  */
+
+  /* -----------------------------------------------------------
+     font/leading  (line-height)
+     ----------------------------------------------------------- */
+  --font-leading-5:  20px;  /* font/leading/5  */
+  --font-leading-6:  24px;  /* font/leading/6  */
+  --font-leading-7:  28px;  /* font/leading/7  */
+  --font-leading-8:  32px;  /* font/leading/8  */
+  --font-leading-9:  36px;  /* font/leading/9  */
+  --font-leading-10: 40px;  /* font/leading/10 */
+
+  /* -----------------------------------------------------------
+     font/tracking  (letter-spacing)
+     ----------------------------------------------------------- */
+  --font-tracking-normal: 0;       /* font/tracking/normal    */
+  --font-tracking-tight:  -0.8px;  /* Letter Spacing/tight    */
+
+  /* -----------------------------------------------------------
+     font/style
+     ----------------------------------------------------------- */
+  --font-style-italic: italic;  /* font/style/italic */
+
+  /* -----------------------------------------------------------
+     COLORS – exact hex values from Figma variables
+     ----------------------------------------------------------- */
+
+  /* Base */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Gray */
+  --color-gray-50:  #f8f9fa;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d0d4da;
+  --color-gray-400: #9da3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Neutral */
+  --color-neutral-50:  #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e3e3e3;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+
+  /* Accent colors */
+  --color-red-500:     #ee4444;
+  --color-orange-500:  #f87416;
+  --color-yellow-400:  #f9cb15;
+  --color-green-500:   #21c45d;
+  --color-emerald-500: #10b880;
+  --color-sky-500:     #0da2e7;
+  --color-blue-500:    #3d84f5;
+  --color-indigo-500:  #6063f0;
+  --color-violet-500:  #895bf5;
+  --color-purple-500:  #a855f6;
+  --color-fuchsia-500: #d744ee;
+  --color-pink-600:    #da2777;
+
+  /* Custom (project-specific, used in gradients/backgrounds) */
+  --color-custom-light-pink:    #fff9fe;
+  --color-custom-butter-yellow: #fff4db;
+  --color-custom-pink:          #f4c5f7;
+  --color-custom-nude-purple:   #ceccfa;
+
+  /* Semantic aliases */
+  --color-bg: var(--color-white);
+  --color-fg: var(--color-black);
+  --color-muted: var(--color-gray-500);
+  --color-border: var(--color-gray-200);
+
+  /* -----------------------------------------------------------
+     LAYOUT
+     ----------------------------------------------------------- */
+  --max-w-desktop: 1440px;
+  --max-w-mobile: 390px;
+  --container-padding-desktop: 40px;
+  --container-padding-mobile: 24px;
+
+  /* -----------------------------------------------------------
+     BORDER RADIUS
+     ----------------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* -----------------------------------------------------------
+     TRANSITIONS
+     ----------------------------------------------------------- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* ==============================================================
+   Composite typography styles – matching Figma text styles
+   Each maps directly to a named style in Figma's typography page.
+   Instrument Serif only ships weight 400, so font-weight: 900
+   from Figma is visual-only; we keep the variable for fidelity.
+   ============================================================== */
+
+/* ---- Desktop ---- */
+
+/* hero: Instrument Serif Regular 96/96 tracking -0.8 */
+/* hero-italic: Instrument Serif Italic 96/96 tracking -0.8 */
+/* h1: Instrument Serif Regular 72/72 tracking -0.8 */
+/* h2: Instrument Serif Regular 48/48 tracking 0 */
+/* h3: Instrument Serif Regular 24/32 tracking 0 */
+/* h4: Instrument Serif Regular 30/36 tracking 0 */
+/* h5-caps: PP Neue Montreal Medium 18/28 tracking 0 (uppercase) */
+/* p1: PP Neue Montreal Book 20/28 tracking 0 */
+/* p1-bold: PP Neue Montreal Medium 20/28 tracking 0 */
+/* p2: PP Neue Montreal Book 18/28 tracking 0 */
+/* p2-bold: PP Neue Montreal Medium 18/28 tracking 0 */
+/* p3: PP Neue Montreal Book 16/24 tracking 0 */
+/* link: PP Neue Montreal Book 16/24 tracking 0 */
+/* link-black: PP Neue Montreal Book 16/24 tracking 0 */
+/* caption-sm: PP Neue Montreal Regular 14/20 tracking 0 */
+/* caption-tag-caps: PP Neue Montreal Book 16/24 tracking 0 */
+/* case-caption: PP Neue Montreal Book 18/28 tracking 0 */
+/* number-serif: Instrument Serif Regular 24/32 tracking 0 */
+/* number: Instrument Serif Regular 18/28 tracking 0 */
+/* h2-grey: Instrument Serif Regular 48/48 tracking -0.8 */
+/* p1-bold (sm): PP Neue Montreal Medium 14/20 tracking 0 */
+
+/* ---- Mobile ---- */
+
+/* mobile/hero: Instrument Serif Regular 48/48 tracking 0 */
+/* mobile/mobile-hero-italic: Instrument Serif Italic 48/48 tracking 0 */
+/* mobile/h1: Instrument Serif Regular 48/48 tracking -0.8 */
+/* mobile/h1-grey: Instrument Serif Regular 48/48 tracking -0.8 */
+/* mobile/h4: Instrument Serif Regular 36/48 tracking 0 */
+/* mobile/h5-caps: PP Neue Montreal Medium 16/24 tracking 0 */
+/* mobile/p1: PP Neue Montreal Book 14/20 tracking 0 */
+/* mobile/p2: PP Neue Montreal Book 14/20 tracking 0 */
+/* mobile/p2-bold: PP Neue Montreal Medium 14/20 tracking 0 */
+/* mobile/link: PP Neue Montreal Book 16/24 tracking 0 */
+/* mobile/caption-sm: PP Neue Montreal Regular 14/20 tracking 0 */
+/* mobile/case-caption: PP Neue Montreal Book 16/24 tracking 0 */
+
+/* Dark mode overrides (toggled via .dark class on <html>) */
+.dark {
+  --color-bg: var(--color-neutral-900);
+  --color-fg: var(--color-white);
+  --color-muted: var(--color-neutral-400);
+  --color-border: var(--color-neutral-700);
+}
