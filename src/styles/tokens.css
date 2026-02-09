@@ -116,6 +116,10 @@
   --max-w-mobile: 390px;
   --container-padding-desktop: 40px;
   --container-padding-mobile: 24px;
+  --container-sm: 384px;
+  --container-xl: 576px;
+  --card-w-desktop: 384px;
+  --card-h-desktop: 576px;
 
   /* -----------------------------------------------------------
      BORDER RADIUS

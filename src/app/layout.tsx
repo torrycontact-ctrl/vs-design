@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Serif } from "next/font/google";
 import localFont from "next/font/local";
 import Navbar from "@/components/layout/Navbar";
-import FooterSection from "@/components/sections/FooterSection";
+import FooterWrapper from "@/components/layout/FooterWrapper";
 import "./globals.css";
 
 const ppNeueMontreal = localFont({
@@ -50,7 +50,7 @@ export default function RootLayout({
       <body className="flex h-screen flex-col overflow-hidden antialiased text-[var(--color-fg)] transition-colors duration-300">
         <Navbar />
         {children}
-        <FooterSection />
+        <FooterWrapper />
       </body>
     </html>
   );

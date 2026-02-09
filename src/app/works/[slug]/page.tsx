@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${project.title} – VS Design`,
-    description: project.subtitle,
+    description: project.services,
   };
 }
 
@@ -31,7 +31,7 @@ export default async function WorkPage({ params }: Props) {
     <main>
       <section>
         <h1>{project.title}</h1>
-        <p>{project.subtitle}</p>
+        <p>{project.services}</p>
       </section>
     </main>
   );

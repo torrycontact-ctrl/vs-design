@@ -257,14 +257,16 @@ body {
   letter-spacing: var(--font-tracking-normal);
 }
 
-/* case-caption — PP Neue Montreal Book, 18px/28px */
+/* case-caption — PP Neue Montreal Book, 16px/24px */
 .case-caption {
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   font-style: normal;
   font-weight: var(--font-weight-normal);
-  line-height: var(--font-leading-7);
+  line-height: var(--font-leading-6);
   letter-spacing: var(--font-tracking-normal);
+  text-align: justify;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* caption-tag-caps — PP Neue Montreal Book, 16px/24px, uppercase */
@@ -315,4 +317,14 @@ body {
 .dark .btn-primary:hover {
   background-color: var(--color-custom-butter-yellow);
   color: var(--color-black);
+}
+
+/* Utility: hide scrollbars (used for horizontal carousels) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
