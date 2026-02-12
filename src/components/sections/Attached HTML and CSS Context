@@ -1,0 +1,741 @@
+Attached HTML and CSS Context
+
+<section class="mt-16 bg-gradient-to-b from-[#1d2644] to-[#999fcf] px-6 py-20 md:mt-24 md:px-20 md:py-28"><div class="mx-auto flex w-full max-w-[var(--max-w-desktop)] flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-20"><div class="flex max-w-[640px] flex-col"><div><h2 class="h1 text-[48px] leading-[1.1] text-white md:text-[var(--font-size-7xl)] md:leading-[80px]">Ready to Make</h2><h2 class="h1 text-[48px] leading-[1.1] text-white/60 md:text-[var(--font-size-7xl)] md:leading-[80px]">Something Exciting?</h2></div><p class="p1 mt-6 max-w-[599px] text-white/80">Have a great idea? Whether it's an app, a website, or a custom interface – I can help you to bring your vision to life. Simply press the button below to email me and schedule a 30 min call. I can help you with a brief and product design plan.</p><p class="p1-bold mt-6 text-white">My working hours are flexible for US timezones. Can't wait to collaborate!</p><div class="mt-10"><a class="inline-flex items-center justify-center gap-[10px] rounded-[6px] bg-white px-6 py-3 text-base font-normal uppercase text-black transition-all duration-200 hover:bg-[var(--color-custom-butter-yellow)]" href="mailto:hello@vsdesign.com">GET IN TOUCH<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 7H17M17 7V17M17 7L7 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div></div><div class="flex justify-center md:block"><div class="h-[280px] w-[320px] rounded-3xl bg-white/10 md:h-[448px] md:w-[512px]"></div></div></div></section>
+
+
+/* Matched Rule from user-agent */
+article, aside, footer, header, hgroup, main, nav, search, section {
+  display: block;
+}
+
+/* Matched Rule from user-agent */
+address, blockquote, center, div, figure, figcaption, footer, form, header, hr, legend, listing, main, p, plaintext, pre, summary, xmp, article, aside, h1, h2, h3, h4, h5, h6, hgroup, nav, section, search, table, caption, colgroup, col, thead, tbody, tfoot, tr, td, th, dir, dd, dl, dt, menu, ol, ul, li, bdi, output, [dir="ltr" i], [dir="rtl" i], [dir="auto" i] {
+  unicode-bidi: isolate;
+}
+
+/* Matched Rule from regular */
+*, :after, :before, ::backdrop {
+  box-sizing: border-box;
+  border: 0 solid;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: initial;
+  border-right-color: initial;
+  border-bottom-color: initial;
+  border-left-color: initial;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+/* Matched Rule from regular */
+.mt-16 {
+  margin-top: calc(var(--spacing) * 16);
+  margin-top: calc(var(--spacing) * 16);
+}
+
+/* Matched Rule from regular */
+.bg-gradient-to-b {
+  --tw-gradient-position: to bottom in oklab;
+  background-image: linear-gradient(var(--tw-gradient-stops));
+  --tw-gradient-position: to bottom in oklab;
+  background-image: linear-gradient(var(--tw-gradient-stops));
+}
+
+/* Matched Rule from regular */
+.from-\[\#1d2644\] {
+  --tw-gradient-from: #1d2644;
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  --tw-gradient-from: #1d2644;
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+
+/* Matched Rule from regular */
+.to-\[\#999fcf\] {
+  --tw-gradient-to: #999fcf;
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  --tw-gradient-to: #999fcf;
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+
+/* Matched Rule from regular */
+.px-6 {
+  padding-inline: calc(var(--spacing) * 6);
+}
+
+/* Matched Rule from regular */
+.py-20 {
+  padding-block: calc(var(--spacing) * 20);
+}
+
+/* Matched Rule from regular */
+.md\:mt-24 {
+  margin-top: calc(var(--spacing) * 24);
+  margin-top: calc(var(--spacing) * 24);
+}
+
+/* Matched Rule from regular */
+.md\:px-20 {
+  padding-inline: calc(var(--spacing) * 20);
+}
+
+/* Matched Rule from regular */
+.md\:py-28 {
+  padding-block: calc(var(--spacing) * 28);
+}
+
+/* Matched Rule from regular */
+*, :before, :after {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+}
+
+/* Inherited from ancestor level 1 (user-agent) */
+article, aside, footer, header, hgroup, main, nav, search, section {
+  display: block;
+}
+
+/* Inherited from ancestor level 1 (user-agent) */
+address, blockquote, center, div, figure, figcaption, footer, form, header, hr, legend, listing, main, p, plaintext, pre, summary, xmp, article, aside, h1, h2, h3, h4, h5, h6, hgroup, nav, section, search, table, caption, colgroup, col, thead, tbody, tfoot, tr, td, th, dir, dd, dl, dt, menu, ol, ul, li, bdi, output, [dir="ltr" i], [dir="rtl" i], [dir="auto" i] {
+  unicode-bidi: isolate;
+}
+
+/* Inherited from ancestor level 1 (regular) */
+*, :after, :before, ::backdrop {
+  box-sizing: border-box;
+  border: 0 solid;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: initial;
+  border-right-color: initial;
+  border-bottom-color: initial;
+  border-left-color: initial;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+/* Inherited from ancestor level 1 (regular) */
+.flex {
+  display: flex;
+  display: flex;
+}
+
+/* Inherited from ancestor level 1 (regular) */
+.flex-1 {
+  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+
+/* Inherited from ancestor level 1 (regular) */
+.flex-col {
+  flex-direction: column;
+  flex-direction: column;
+}
+
+/* Inherited from ancestor level 1 (regular) */
+.overflow-y-auto {
+  overflow-y: auto;
+  overflow-y: auto;
+}
+
+/* Inherited from ancestor level 1 (regular) */
+*, :before, :after {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+}
+
+/* Inherited from ancestor level 2 (user-agent) */
+body {
+  display: block;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+}
+
+/* Inherited from ancestor level 2 (regular) */
+*, :after, :before, ::backdrop {
+  box-sizing: border-box;
+  border: 0 solid;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: initial;
+  border-right-color: initial;
+  border-bottom-color: initial;
+  border-left-color: initial;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+/* Inherited from ancestor level 2 (regular) */
+.flex {
+  display: flex;
+  display: flex;
+}
+
+/* Inherited from ancestor level 2 (regular) */
+.h-screen {
+  height: 100vh;
+  height: 100vh;
+}
+
+/* Inherited from ancestor level 2 (regular) */
+.flex-col {
+  flex-direction: column;
+  flex-direction: column;
+}
+
+/* Inherited from ancestor level 2 (regular) */
+.overflow-hidden {
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Inherited from ancestor level 2 (regular) */
+.text-\[var\(--color-fg\)\] {
+  color: var(--color-fg);
+  color: var(--color-fg);
+}
+
+/* Inherited from ancestor level 2 (regular) */
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Inherited from ancestor level 2 (regular) */
+.transition-colors {
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+
+/* Inherited from ancestor level 2 (regular) */
+.duration-300 {
+  --tw-duration: .3s;
+  transition-duration: .3s;
+  --tw-duration: .3s;
+  transition-duration: 0.3s;
+}
+
+/* Inherited from ancestor level 2 (regular) */
+*, :before, :after {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+}
+
+/* Inherited from ancestor level 2 (regular) */
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background-image: linear-gradient(#fff9fe 0%, #f4c5f7 44.27%, #cfcdfa 100%) !important;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  background-image: linear-gradient(rgb(255, 249, 254) 0%, rgb(244, 197, 247) 44.27%, rgb(207, 205, 250) 100%) !important;
+}
+
+/* Inherited from ancestor level 3 (user-agent) */
+html {
+  display: block;
+}
+
+/* Inherited from ancestor level 3 (user-agent) */
+:root {
+  view-transition-name: root;
+}
+
+/* Inherited from ancestor level 3 (regular) */
+:root, :host {
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-red-500: #fb2c36;
+  --color-orange-500: #fe6e00;
+  --color-yellow-400: #fac800;
+  --color-green-500: #00c758;
+  --color-emerald-500: #00bb7f;
+  --color-sky-500: #00a5ef;
+  --color-blue-500: #3080ff;
+  --color-indigo-500: #625fff;
+  --color-violet-500: #8d54ff;
+  --color-purple-500: #ac4bff;
+  --color-fuchsia-500: #e12afb;
+  --color-pink-600: #e30076;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5dc;
+  --color-gray-400: #99a1af;
+  --color-gray-500: #6a7282;
+  --color-gray-600: #4a5565;
+  --color-gray-700: #364153;
+  --color-gray-800: #1e2939;
+  --color-gray-900: #101828;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a1a1a1;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-black: #000;
+  --color-white: #fff;
+  --spacing: .25rem;
+  --container-sm: 24rem;
+  --container-xl: 36rem;
+  --text-base: 1rem;
+  --text-base--line-height: calc(1.5 / 1);
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-black: 900;
+  --radius-sm: .25rem;
+  --radius-md: .375rem;
+  --radius-lg: .5rem;
+  --radius-xl: .75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --ease-out: cubic-bezier(0, 0, .2, 1);
+  --animate-ping: ping 1s cubic-bezier(0, 0, .2, 1) infinite;
+  --default-transition-duration: .15s;
+  --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  --default-font-family: var(--font-sans);
+  --default-mono-font-family: var(--font-mono);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-red-500: #fb2c36;
+  --color-orange-500: #fe6e00;
+  --color-yellow-400: #fac800;
+  --color-green-500: #00c758;
+  --color-emerald-500: #00bb7f;
+  --color-sky-500: #00a5ef;
+  --color-blue-500: #3080ff;
+  --color-indigo-500: #625fff;
+  --color-violet-500: #8d54ff;
+  --color-purple-500: #ac4bff;
+  --color-fuchsia-500: #e12afb;
+  --color-pink-600: #e30076;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5dc;
+  --color-gray-400: #99a1af;
+  --color-gray-500: #6a7282;
+  --color-gray-600: #4a5565;
+  --color-gray-700: #364153;
+  --color-gray-800: #1e2939;
+  --color-gray-900: #101828;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a1a1a1;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-black: #000;
+  --color-white: #fff;
+  --spacing: .25rem;
+  --container-sm: 24rem;
+  --container-xl: 36rem;
+  --text-base: 1rem;
+  --text-base--line-height: calc(1.5 / 1);
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-black: 900;
+  --radius-sm: .25rem;
+  --radius-md: .375rem;
+  --radius-lg: .5rem;
+  --radius-xl: .75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --ease-out: cubic-bezier(0, 0, .2, 1);
+  --animate-ping: ping 1s cubic-bezier(0, 0, .2, 1) infinite;
+  --default-transition-duration: .15s;
+  --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  --default-font-family: var(--font-sans);
+  --default-mono-font-family: var(--font-mono);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+}
+
+/* Inherited from ancestor level 3 (regular) */
+:root, :host {
+  --color-red-500: lab(55.4814% 75.0732 48.8528);
+  --color-orange-500: lab(64.272% 57.1788 90.3583);
+  --color-yellow-400: lab(83.2664% 8.65132 106.895);
+  --color-green-500: lab(70.5521% -66.5147 45.8073);
+  --color-emerald-500: lab(66.9756% -58.27 19.5419);
+  --color-sky-500: lab(63.3038% -18.433 -51.0407);
+  --color-blue-500: lab(54.1736% 13.3369 -74.6839);
+  --color-indigo-500: lab(48.295% 38.3129 -81.9673);
+  --color-violet-500: lab(49.9355% 55.1776 -81.8963);
+  --color-purple-500: lab(52.0183% 66.11 -78.2316);
+  --color-fuchsia-500: lab(56.4256% 83.132 -64.639);
+  --color-pink-600: lab(49.5493% 79.8381 2.31768);
+  --color-gray-50: lab(98.2596% -.247031 -.706708);
+  --color-gray-100: lab(96.1596% -.0823438 -1.13575);
+  --color-gray-200: lab(91.6229% -.159115 -2.26791);
+  --color-gray-300: lab(85.1236% -.612259 -3.7138);
+  --color-gray-400: lab(65.9269% -.832707 -8.17473);
+  --color-gray-500: lab(47.7841% -.393182 -10.0268);
+  --color-gray-600: lab(35.6337% -1.58697 -10.8425);
+  --color-gray-700: lab(27.1134% -.956401 -12.3224);
+  --color-gray-800: lab(16.1051% -1.18239 -11.7533);
+  --color-gray-900: lab(8.11897% .811279 -12.254);
+  --color-neutral-50: lab(98.26% 0 0);
+  --color-neutral-100: lab(96.52% -.0000298023 .0000119209);
+  --color-neutral-200: lab(90.952% 0 -.0000119209);
+  --color-neutral-300: lab(84.92% 0 -.0000119209);
+  --color-neutral-400: lab(66.128% -.0000298023 .0000119209);
+  --color-neutral-500: lab(48.496% 0 0);
+  --color-neutral-600: lab(34.924% 0 0);
+  --color-neutral-700: lab(27.036% 0 0);
+  --color-neutral-800: lab(15.204% 0 -.00000596046);
+  --color-neutral-900: lab(7.78201% -.0000149012 0);
+  --color-red-500: lab(55.4814% 75.0732 48.8528);
+  --color-orange-500: lab(64.272% 57.1788 90.3583);
+  --color-yellow-400: lab(83.2664% 8.65132 106.895);
+  --color-green-500: lab(70.5521% -66.5147 45.8073);
+  --color-emerald-500: lab(66.9756% -58.27 19.5419);
+  --color-sky-500: lab(63.3038% -18.433 -51.0407);
+  --color-blue-500: lab(54.1736% 13.3369 -74.6839);
+  --color-indigo-500: lab(48.295% 38.3129 -81.9673);
+  --color-violet-500: lab(49.9355% 55.1776 -81.8963);
+  --color-purple-500: lab(52.0183% 66.11 -78.2316);
+  --color-fuchsia-500: lab(56.4256% 83.132 -64.639);
+  --color-pink-600: lab(49.5493% 79.8381 2.31768);
+  --color-gray-50: lab(98.2596% -.247031 -.706708);
+  --color-gray-100: lab(96.1596% -.0823438 -1.13575);
+  --color-gray-200: lab(91.6229% -.159115 -2.26791);
+  --color-gray-300: lab(85.1236% -.612259 -3.7138);
+  --color-gray-400: lab(65.9269% -.832707 -8.17473);
+  --color-gray-500: lab(47.7841% -.393182 -10.0268);
+  --color-gray-600: lab(35.6337% -1.58697 -10.8425);
+  --color-gray-700: lab(27.1134% -.956401 -12.3224);
+  --color-gray-800: lab(16.1051% -1.18239 -11.7533);
+  --color-gray-900: lab(8.11897% .811279 -12.254);
+  --color-neutral-50: lab(98.26% 0 0);
+  --color-neutral-100: lab(96.52% -.0000298023 .0000119209);
+  --color-neutral-200: lab(90.952% 0 -.0000119209);
+  --color-neutral-300: lab(84.92% 0 -.0000119209);
+  --color-neutral-400: lab(66.128% -.0000298023 .0000119209);
+  --color-neutral-500: lab(48.496% 0 0);
+  --color-neutral-600: lab(34.924% 0 0);
+  --color-neutral-700: lab(27.036% 0 0);
+  --color-neutral-800: lab(15.204% 0 -.00000596046);
+  --color-neutral-900: lab(7.78201% -.0000149012 0);
+}
+
+/* Inherited from ancestor level 3 (regular) */
+*, :after, :before, ::backdrop {
+  box-sizing: border-box;
+  border: 0 solid;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: initial;
+  border-right-color: initial;
+  border-bottom-color: initial;
+  border-left-color: initial;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+/* Inherited from ancestor level 3 (regular) */
+html, :host {
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  line-height: 1.5;
+  font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+  font-feature-settings: var(--default-font-feature-settings, normal);
+  font-variation-settings: var(--default-font-variation-settings, normal);
+  -webkit-tap-highlight-color: transparent;
+  text-size-adjust: 100%;
+  tab-size: 4;
+  line-height: 1.5;
+  font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+  font-feature-settings: var(--default-font-feature-settings, normal);
+  font-variation-settings: var(--default-font-variation-settings, normal);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Inherited from ancestor level 3 (regular) */
+*, :before, :after {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+}
+
+/* Inherited from ancestor level 3 (regular) */
+.ppneuemontreal_576c8304-module__6An2JW__variable {
+  --font-sans: "ppNeueMontreal", "ppNeueMontreal Fallback";
+  --font-sans: "ppNeueMontreal", "ppNeueMontreal Fallback";
+}
+
+/* Inherited from ancestor level 3 (regular) */
+.instrument_serif_755987ce-module__9p7P3W__variable {
+  --font-serif: "Instrument Serif", "Instrument Serif Fallback";
+  --font-serif: "Instrument Serif", "Instrument Serif Fallback";
+}
+
+/* Inherited from ancestor level 3 (regular) */
+:root {
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 48px;
+  --font-size-7xl: 72px;
+  --font-size-8xl: 96px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-black: 900;
+  --font-leading-5: 20px;
+  --font-leading-6: 24px;
+  --font-leading-7: 28px;
+  --font-leading-8: 32px;
+  --font-leading-9: 36px;
+  --font-leading-10: 40px;
+  --font-tracking-normal: 0;
+  --font-tracking-tight: -.8px;
+  --font-style-italic: italic;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray-50: #f8f9fa;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d0d4da;
+  --color-gray-400: #9da3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e3e3e3;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-red-500: #e44;
+  --color-orange-500: #f87416;
+  --color-yellow-400: #f9cb15;
+  --color-green-500: #21c45d;
+  --color-emerald-500: #10b880;
+  --color-sky-500: #0da2e7;
+  --color-blue-500: #3d84f5;
+  --color-indigo-500: #6063f0;
+  --color-violet-500: #895bf5;
+  --color-purple-500: #a855f6;
+  --color-fuchsia-500: #d744ee;
+  --color-pink-600: #da2777;
+  --color-custom-light-pink: #fff9fe;
+  --color-custom-butter-yellow: #fff4db;
+  --color-custom-pink: #f4c5f7;
+  --color-custom-nude-purple: #ceccfa;
+  --color-bg: var(--color-white);
+  --color-fg: var(--color-black);
+  --color-muted: var(--color-gray-500);
+  --color-border: var(--color-gray-200);
+  --max-w-desktop: 1440px;
+  --max-w-mobile: 390px;
+  --container-padding-desktop: 40px;
+  --container-padding-mobile: 24px;
+  --container-sm: 384px;
+  --container-xl: 576px;
+  --card-w-desktop: 384px;
+  --card-h-desktop: 576px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  --transition-fast: .15s ease;
+  --transition-base: .25s ease;
+  --transition-slow: .4s ease;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 48px;
+  --font-size-7xl: 72px;
+  --font-size-8xl: 96px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-black: 900;
+  --font-leading-5: 20px;
+  --font-leading-6: 24px;
+  --font-leading-7: 28px;
+  --font-leading-8: 32px;
+  --font-leading-9: 36px;
+  --font-leading-10: 40px;
+  --font-tracking-normal: 0;
+  --font-tracking-tight: -.8px;
+  --font-style-italic: italic;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray-50: #f8f9fa;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d0d4da;
+  --color-gray-400: #9da3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e3e3e3;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-red-500: #e44;
+  --color-orange-500: #f87416;
+  --color-yellow-400: #f9cb15;
+  --color-green-500: #21c45d;
+  --color-emerald-500: #10b880;
+  --color-sky-500: #0da2e7;
+  --color-blue-500: #3d84f5;
+  --color-indigo-500: #6063f0;
+  --color-violet-500: #895bf5;
+  --color-purple-500: #a855f6;
+  --color-fuchsia-500: #d744ee;
+  --color-pink-600: #da2777;
+  --color-custom-light-pink: #fff9fe;
+  --color-custom-butter-yellow: #fff4db;
+  --color-custom-pink: #f4c5f7;
+  --color-custom-nude-purple: #ceccfa;
+  --color-bg: var(--color-white);
+  --color-fg: var(--color-black);
+  --color-muted: var(--color-gray-500);
+  --color-border: var(--color-gray-200);
+  --max-w-desktop: 1440px;
+  --max-w-mobile: 390px;
+  --container-padding-desktop: 40px;
+  --container-padding-mobile: 24px;
+  --container-sm: 384px;
+  --container-xl: 576px;
+  --card-w-desktop: 384px;
+  --card-h-desktop: 576px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  --transition-fast: .15s ease;
+  --transition-base: .25s ease;
+  --transition-slow: .4s ease;
+}

@@ -6,7 +6,7 @@ import FooterSection from "@/components/sections/FooterSection";
 export default function FooterWrapper() {
   const pathname = usePathname();
 
-  if (pathname === "/works" || pathname === "/about") {
+  if (pathname === "/works" || pathname === "/about" || pathname === "/contact" || pathname.startsWith("/works/")) {
     return null;
   }
 

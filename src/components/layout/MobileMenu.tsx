@@ -1,33 +1,37 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
   links: { href: string; label: string }[];
-  pathname: string;
 }
+
+/* ── Shared external-store helpers ─────────────────────────────── */
+function subscribeDarkMode(callback: () => void) {
+  const observer = new MutationObserver(callback);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  return () => observer.disconnect();
+}
+
+function getDarkSnapshot() {
+  return document.documentElement.classList.contains("dark");
+}
+
+const getDarkServerSnapshot = () => false;
+const noopSubscribe = () => () => {};
+const getMountedSnapshot = () => true;
+const getMountedServerSnapshot = () => false;
 
 /* ── Theme toggle (larger version for mobile menu: 80×40) ──── */
 function MobileThemeToggle() {
-  const [dark, setDark] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    setDark(document.documentElement.classList.contains("dark"));
-    const observer = new MutationObserver(() => {
-      setDark(document.documentElement.classList.contains("dark"));
-    });
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-    return () => observer.disconnect();
-  }, []);
+  const mounted = useSyncExternalStore(noopSubscribe, getMountedSnapshot, getMountedServerSnapshot);
+  const dark = useSyncExternalStore(subscribeDarkMode, getDarkSnapshot, getDarkServerSnapshot);
 
   const toggle = () => {
     const next = !dark;
-    setDark(next);
     document.documentElement.classList.toggle("dark", next);
     localStorage.setItem("theme", next ? "dark" : "light");
   };
@@ -64,7 +68,6 @@ export default function MobileMenu({
   isOpen,
   onClose,
   links,
-  pathname,
 }: MobileMenuProps) {
   /* Lock body scroll when open */
   useEffect(() => {
@@ -118,7 +121,7 @@ export default function MobileMenu({
         >
           {/* EMAIL ↗ */}
           <Link
-            href="mailto:hello@vsdesign.com"
+            href="mailto:torry.contact@gmail.com"
             onClick={onClose}
             className="link-black flex items-center gap-1"
           >

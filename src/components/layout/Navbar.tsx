@@ -2,24 +2,32 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useSyncExternalStore } from "react";
 import { Menu, X } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 
+/* ── Shared external-store helpers ─────────────────────────────── */
+function subscribeDarkMode(callback: () => void) {
+  const observer = new MutationObserver(callback);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  return () => observer.disconnect();
+}
+
+function getDarkSnapshot() {
+  return document.documentElement.classList.contains("dark");
+}
+
+function getDarkServerSnapshot() {
+  return false;
+}
+
+const noopSubscribe = () => () => {};
+const getMountedSnapshot = () => true;
+const getMountedServerSnapshot = () => false;
+
 /* ── Logo icon — exact SVG from Figma (40×40) ────────────────── */
 function LogoIcon() {
-  const [dark, setDark] = useState(false);
-
-  useEffect(() => {
-    const html = document.documentElement;
-    setDark(html.classList.contains("dark"));
-    const observer = new MutationObserver(() => {
-      setDark(html.classList.contains("dark"));
-    });
-    observer.observe(html, { attributes: true, attributeFilter: ["class"] });
-    return () => observer.disconnect();
-  }, []);
-
+  const dark = useSyncExternalStore(subscribeDarkMode, getDarkSnapshot, getDarkServerSnapshot);
   const logoColor = dark ? "#fff" : "#000";
 
   return (
@@ -49,22 +57,19 @@ const NAV_LINKS = [
 
 /* ── Dark-mode toggle (moon/sun pill) ────────────────────────── */
 function ThemeToggle() {
-  const [dark, setDark] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(noopSubscribe, getMountedSnapshot, getMountedServerSnapshot);
+  const dark = useSyncExternalStore(subscribeDarkMode, getDarkSnapshot, getDarkServerSnapshot);
 
   useEffect(() => {
-    setMounted(true);
     const stored = localStorage.getItem("theme");
     const prefersDark =
       stored === "dark" ||
       (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
-    setDark(prefersDark);
     document.documentElement.classList.toggle("dark", prefersDark);
   }, []);
 
   const toggle = () => {
     const next = !dark;
-    setDark(next);
     document.documentElement.classList.toggle("dark", next);
     localStorage.setItem("theme", next ? "dark" : "light");
   };
@@ -101,8 +106,33 @@ export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const isProjectPage = /^\/works\/[^/]+$/.test(pathname);
+
+  const subscribeScroll = useCallback(
+    (callback: () => void) => {
+      if (!isProjectPage) return () => {};
+      const scrollContainer = document.querySelector("main");
+      if (!scrollContainer) return () => {};
+      scrollContainer.addEventListener("scroll", callback, { passive: true });
+      return () => scrollContainer.removeEventListener("scroll", callback);
+    },
+    [isProjectPage],
+  );
+
+  const getScrollSnapshot = useCallback(() => {
+    if (!isProjectPage) return false;
+    const el = document.querySelector("main");
+    return el ? el.scrollTop > 10 : false;
+  }, [isProjectPage]);
+
+  const scrolled = useSyncExternalStore(subscribeScroll, getScrollSnapshot, () => false);
+
+  const headerBg = isProjectPage && scrolled
+    ? "bg-white dark:bg-black transition-colors duration-200"
+    : "";
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
+    <header className={`fixed inset-x-0 top-0 z-50 ${headerBg}`}>
       <nav className="mx-auto flex h-16 max-w-[var(--max-w-desktop)] items-center justify-between px-[var(--container-padding-mobile)] lg:px-[var(--container-padding-desktop)]">
         {/* ── Logo ────────────────────────────────── */}
         <Link href="/" className="flex items-center gap-3">
@@ -130,7 +160,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-5">
           <ThemeToggle />
           <Link
-            href="mailto:hello@vsdesign.com"
+            href="mailto:torry.contact@gmail.com"
             className="link-black flex items-center gap-1.5 transition-opacity hover:opacity-60"
           >
             Email
@@ -159,7 +189,6 @@ export default function Navbar() {
         isOpen={menuOpen}
         onClose={() => setMenuOpen(false)}
         links={NAV_LINKS}
-        pathname={pathname}
       />
     </header>
   );

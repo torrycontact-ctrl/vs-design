@@ -43,6 +43,19 @@ body {
   background-color: #000 !important;
 }
 
+/* Home page background */
+.home-gradient {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(1200px 700px at 12% -12%, rgba(255, 249, 254, 0.95) 0%, rgba(255, 249, 254, 0) 60%),
+    radial-gradient(900px 600px at 88% 6%, rgba(244, 197, 247, 0.6) 0%, rgba(244, 197, 247, 0) 55%),
+    linear-gradient(180deg, #FFF9FE 0%, #F4C5F7 44.27%, #CFCDFA 100%);
+}
+
+.dark .home-gradient {
+  background-image: none;
+}
+
 /* Smooth dark-mode transitions */
 *,
 *::before,

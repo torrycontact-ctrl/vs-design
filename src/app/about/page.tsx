@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
+    <main className="flex-1 overflow-y-auto bg-[linear-gradient(180deg,#FFF9FE_-199.24%,#CECCFA_-143.37%,#F4C5F7_0.32%,#FFF4DB_120.06%)] dark:bg-none">
       <AboutSection />
     </main>
   );
