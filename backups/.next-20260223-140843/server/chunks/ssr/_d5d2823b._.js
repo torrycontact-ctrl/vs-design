@@ -1,0 +1,3 @@
+module.exports=[35112,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored["react-ssr"].ReactDOM},85670,a=>{"use strict";var b=a.i(87924),c=a.i(72131);function d({children:a,selector:d="[data-reveal]",rootMargin:e="0px 0px -10% 0px",threshold:f=.2,replay:g=!1}){let h=(0,c.useRef)(null);return(0,c.useEffect)(()=>{},[g,e,d,f]),(0,b.jsx)("div",{ref:h,children:a})}a.s(["default",()=>d])}];
+
+//# sourceMappingURL=_d5d2823b._.js.map

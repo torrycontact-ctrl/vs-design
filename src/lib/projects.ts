@@ -4,9 +4,10 @@ export interface ContentBlock {
 }
 
 export interface ImageBlock {
-  type: "single" | "double" | "full";
+  type: "single" | "double" | "full" | "beforeAfter";
   images: { src: string; alt: string }[];
   height?: number;
+  fit?: "cover" | "contain";
 }
 
 export interface GalleryImage {
@@ -36,21 +37,27 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "ai-music-player",
-    title: "AI Music Player",
-    services: "APP, AI DESIGN",
-    thumbnail: "/images/Works/Light/img.png",
-    heroImage: "/images/Works/Light/img.png",
-    client: "Melodify Inc.",
+    slug: "astoria",
+    title: "Astoria Health",
+    services: "Product design • SaaS • AI integration • Healthcare",
+    thumbnail: "/images/Works/1.png",
+    heroImage: "/images/Work/Astoria/hero.png",
     website: { label: "melodify.io", url: "https://melodify.io" },
-    industry: "Music & Entertainment",
-    timeline: "Jan 2024 – Apr 2024",
+    industry: "A role-based clinic platform built around how medical teams actually work.",
+    timeline: "Oct 2025 – Feb 2026",
     contentBlocks: [
       {
-        heading: "Reimagining the Music Experience with AI",
+        heading: "Three Roles, One Patient Record, Zero Room for Error",
         paragraphs: [
-          "The challenge was to create a music player that adapts to the user's mood, habits, and environment. Traditional music apps rely on static playlists and manual curation — we wanted to change that.",
-          "By leveraging AI-driven recommendations and contextual awareness, we designed an experience that feels personal and effortless from the first interaction.",
+          "Astoria Health needed a digital system that could run a real medical clinic. Not a dashboard with charts — an operational tool where front desk staff manage appointments, nurses handle intake and vitals, and doctors document diagnoses and prescriptions. All three roles working with the same patient data, in real time, under time pressure.",
+          "The challenge was operational, not visual. Every role carries a different mental model, a different pace, and different priorities — but the data flowing between them has to be seamless. A missed handoff in a clinic isn't a UX friction point. It's a patient safety issue.",
+        ],
+      },
+      {
+        heading: "Three Products That Behave Like One",
+        paragraphs: [
+          "The platform was structured as three distinct environments sharing a common data layer. The Front Desk interface is built around scheduling, patient creation, and routing — optimized for speed and minimal clicks. The Nurse workspace focuses on structured intake: vitals capture, medical history forms, and preparation notes that flow directly into the doctor's view.",
+          "The Doctor dashboard brings everything together — patient timeline, current visit data, diagnosis entry, prescriptions, and longitudinal notes. AI voice transcription was integrated across all three roles, allowing staff to document while working rather than after. The key design decision: keeping manual override visible at every step. In healthcare, the system suggests — it never decides.",
         ],
       },
     ],
@@ -58,49 +65,81 @@ export const projects: Project[] = [
       {
         type: "single",
         images: [
-          { src: "/images/Works/Light/img.png", alt: "App main screen" },
+          { src: "/images/Work/Astoria/1.png", alt: "Astoria Health platform overview" },
         ],
       },
       {
         type: "double",
         images: [
-          { src: "/images/Works/Light/img.png", alt: "Player view" },
-          { src: "/images/Works/Light/img.png", alt: "Playlist view" },
+          { src: "/images/Work/Astoria/31.png", alt: "Astoria front desk interface" },
+          { src: "/images/Work/Astoria/32.png", alt: "Astoria nurse workspace" },
         ],
       },
       {
         type: "single",
         height: 672,
         images: [
-          { src: "/images/Works/Light/img.png", alt: "Full app experience" },
+          { src: "/images/Work/Astoria/2.png", alt: "Astoria doctor dashboard" },
         ],
       },
     ],
     resultsGalleryWidths: [512, 576, 320, 384],
     results: {
-      heading: "Final Results",
+      heading: "A Clinical System Ready for Real Operations",
       paragraphs: [
-        "The AI Music Player launched to overwhelmingly positive reception. User engagement increased by 40% compared to traditional players, with an average session duration of 45 minutes.",
-        "The adaptive recommendation engine achieved a 92% satisfaction rate in user surveys, proving that thoughtful AI integration enhances rather than replaces the human experience.",
+        "The result is a production-structured platform that maps directly to how clinics function. Three role-based interfaces, clean data handoffs between each stage of care, and AI-assisted documentation that stays out of the way until it's needed.",
+        "What started as an ambitious concept became a grounded, buildable system — designed not to impress in a demo, but to survive a Monday morning rush at a busy clinic.",
       ],
     },
+    resultsGalleryImages: [
+      {
+        src: "/images/Work/Astoria/small-image 1.png",
+        alt: "Astoria interface detail 1",
+        width: 800,
+        height: 600,
+      },
+      {
+        src: "/images/Work/Astoria/small-image 2.png",
+        alt: "Astoria interface detail 2",
+        width: 900,
+        height: 600,
+      },
+      {
+        src: "/images/Work/Astoria/small-image 4: png.png",
+        alt: "Astoria interface detail 3",
+        width: 600,
+        height: 600,
+      },
+      {
+        src: "/images/Work/Astoria/small-image 5.png",
+        alt: "Astoria interface detail 4",
+        width: 600,
+        height: 600,
+      },
+    ],
   },
   {
-    slug: "clinic-ai-erm",
-    title: "Clinic AI ERM",
-    services: "SAAS, CRM, WEB",
-    thumbnail: "/images/Works/Light/img-1.png",
-    heroImage: "/images/Works/Light/img-1.png",
-    client: "Clinic AI",
-    website: { label: "EMAIL", url: "mailto:hello@vsdesign.com" },
-    industry: "Healthcare, AI",
-    timeline: "Feb 2024 – Jul 2024",
+    slug: "qoria",
+    title: "Qoria",
+    services: "Product design • Mobile app • Gamification • Social",
+    thumbnail: "/images/Works/2.png",
+    heroImage: "/images/Work/Qoria/hero.png",
+    website: { label: "EMAIL", url: "mailto:torry.contact@gmail.com" },
+    industry: "A competition platform where community engagement has rules, structure, and a reason to come back.",
+    timeline: "Aug 2025 – Oct 2025",
     contentBlocks: [
       {
-        heading: "Designing a Modern Clinic Operations Hub",
+        heading: "Social Energy Without a System Is Just Noise",
         paragraphs: [
-          "Clinic AI ERM unifies patient records, scheduling, and reporting into a single operational hub for clinics. The goal was to reduce administrative friction while improving clarity for clinical teams.",
-          "We focused on scalable information architecture and predictable workflows so teams can move quickly between patients, appointments, and analytics without losing context.",
+          "Qoria is a dance competition platform built around community participation, creator growth, and repeat engagement. The product ambition was clear: let people compete, vote, and grow an audience. The design challenge was making all of that feel fair, transparent, and structured enough to sustain long-term use.",
+          "Without careful system design, competition platforms collapse quickly. Voting feels rigged. Winners feel random. Participation drops after the first round. The core problem wasn't how the app looks — it was how the entire competition engine works beneath the surface.",
+        ],
+      },
+      {
+        heading: "Building the Logic Layer Under the Social Layer",
+        paragraphs: [
+          "The competition framework was designed from creation to resolution — defining how users enter, how votes are cast and weighted, how winners are selected, and how results are communicated. Every state in the competition lifecycle was mapped: active, voting, closed, tied, disputed.",
+          "Social features — reactions, duets, profiles, following — were layered on top of this structured foundation rather than the other way around. Premium tutorials and creator monetization flows were embedded with clear gating logic, so revenue mechanics wouldn't disrupt the core experience.",
         ],
       },
     ],
@@ -108,99 +147,81 @@ export const projects: Project[] = [
       {
         type: "single",
         images: [
-          { src: "/images/Works/Light/img-1.png", alt: "Clinic ERM overview" },
+          { src: "/images/Work/Qoria/1.png", alt: "Qoria competition feed" },
         ],
       },
       {
         type: "double",
         images: [
-          { src: "/images/Works/Light/img-1.png", alt: "Patient management" },
-          { src: "/images/Works/Light/img-1.png", alt: "Clinic analytics" },
+          { src: "/images/Work/Qoria/31.png", alt: "Qoria competition detail view" },
+          { src: "/images/Work/Qoria/32.png", alt: "Qoria voting interface" },
         ],
       },
       {
         type: "single",
         height: 672,
         images: [
-          { src: "/images/Works/Light/img-1.png", alt: "Scheduling and insights" },
+          { src: "/images/Work/Qoria/2.png", alt: "Qoria creator profile and social layer" },
         ],
       },
     ],
     resultsGalleryWidths: [512, 576, 320, 384],
     results: {
-      heading: "Final Results",
+      heading: "A Product That Knows When Excitement Needs Guardrails",
       paragraphs: [
-        "Delivered an end-to-end clinic ERM system that unifies patient flows, documentation, and operational reporting. The system reduced time spent on administrative tasks and improved cross-team visibility.",
-        "The redesigned platform improved staff adoption and data accuracy, enabling clinics to scale operations while maintaining a consistent care experience.",
+        "The final platform supports structured competition loops, transparent voting, and a monetization layer that feels native rather than forced. The gamification framework scales — new competition types, content formats, and engagement mechanics can plug into the existing system without redesigning the core.",
+        "A product that could have been chaotic became one with clear rules, predictable behavior, and a reason for users to return.",
       ],
     },
-  },
-  {
-    slug: "dance-app",
-    title: "Dance App",
-    services: "APP, IOS, SOCIAL",
-    thumbnail: "/images/Works/Light/img-2.png",
-    heroImage: "/images/Works/Light/img-2.png",
-    client: "Move Studio",
-    website: { label: "EMAIL", url: "mailto:hello@vsdesign.com" },
-    industry: "Social, Mobile",
-    timeline: "May 2024 – Sep 2024",
-    contentBlocks: [
+    resultsGalleryImages: [
       {
-        heading: "Building a Social Dance Experience",
-        paragraphs: [
-          "Dance App connects creators and communities through short-form classes, challenges, and live sessions. The design had to feel energetic while keeping navigation simple on mobile.",
-          "We prioritized quick onboarding, expressive profiles, and a feed that highlights trending moves without sacrificing performance or usability.",
-        ],
+        src: "/images/Work/Qoria/small-image 17.png",
+        alt: "Qoria interface detail 1",
+        width: 800,
+        height: 600,
+      },
+      {
+        src: "/images/Work/Qoria/small-image 18.png",
+        alt: "Qoria interface detail 2",
+        width: 600,
+        height: 600,
+      },
+      {
+        src: "/images/Work/Qoria/small-image 22.png",
+        alt: "Qoria interface detail 3",
+        width: 900,
+        height: 600,
+      },
+      {
+        src: "/images/Work/Qoria/small-image 25.png",
+        alt: "Qoria interface detail 4",
+        width: 600,
+        height: 600,
       },
     ],
-    imageBlocks: [
-      {
-        type: "single",
-        images: [
-          { src: "/images/Works/Light/img-2.png", alt: "Dance app feed" },
-        ],
-      },
-      {
-        type: "double",
-        images: [
-          { src: "/images/Works/Light/img-2.png", alt: "Class details" },
-          { src: "/images/Works/Light/img-2.png", alt: "Creator profile" },
-        ],
-      },
-      {
-        type: "single",
-        height: 672,
-        images: [
-          { src: "/images/Works/Light/img-2.png", alt: "Challenges overview" },
-        ],
-      },
-    ],
-    resultsGalleryWidths: [512, 576, 320, 384],
-    results: {
-      heading: "Final Results",
-      paragraphs: [
-        "Shipped a social-first mobile experience that increases community engagement while keeping discovery friction low. The interface supports creators, classes, and challenges with clear visual hierarchy.",
-        "The product launched with strong retention and a growing creator base, validating the balance of expressive visuals and practical navigation.",
-      ],
-    },
   },
   {
-    slug: "teams-platform",
-    title: "Teams Management Platform",
-    services: "Saas, Dashboard, CRM, Web App",
-    thumbnail: "/images/Works/Light/img-3.png",
-    heroImage: "/images/Works/Light/small-image.png",
-    client: "dot cards",
+    slug: "teams",
+    title: "dot.Teams",
+    services: "Product design • SaaS platform • Web • Mobile • Design system",
+    thumbnail: "/images/Works/3.png",
+    heroImage: "/images/Work/teams/hero.png",
     website: { label: "teams.dot.cards", url: "https://teams.dot.cards" },
-    industry: "Start-Up, AI",
-    timeline: "Jan 2024 - May 2025",
+    industry: "Taking a growing product from feature accumulation to system-level clarity.",
+    timeline: "Feb 2023 – May 2025",
     contentBlocks: [
       {
-        heading: "Building a Scalable Team Platform",
+        heading: "More Features, Less Coherence",
         paragraphs: [
-          "dot.Teams is a team and contact management platform within the dot.cards ecosystem. This project focused on designing scalable UX and UI systems that support growing teams, complex roles, and real operational needs — from early structure to production.",
-          "As teams grow, managing people, connections, and shared data becomes increasingly complex. dot.Teams was designed to support this growth — providing a structured, flexible platform for team and contact management within the dot.cards ecosystem.",
+          "dot.Teams is an all-in-one CRM and team management platform designed to unify eCommerce, user profiles, and collaborative tools. As features expanded, the product required a cohesive system that could support onboarding, subscriptions, team collaboration, and operational workflows without increasing complexity for multi-role users — admins, team members, and clients.",
+          "The goal wasn't a redesign for visual polish. It was structural: unify the platform into a system that could keep growing without becoming harder to use with every release. The project spanned 6 months — from discovery and UX research through high-fidelity UI and developer handoff.",
+        ],
+      },
+      {
+        heading: "Designing the Platform and the System That Powers It",
+        paragraphs: [
+          "Detailed user flows were mapped across all roles, validated through research and stakeholder collaboration, forming the foundation for product architecture, improved navigation, and clearer feature access across multiple subscription plans. Low- to high-fidelity wireframes established hierarchy and task-driven interfaces, aligning stakeholders and developers around a unified cross-device experience.",
+          "The deeper work was building the design system underneath. 243 reusable components, structured naming, documented patterns, and interaction logic that engineering could implement without ambiguity. Typography, color palette, spacing, and component library were defined as a cohesive visual language aligned with brand and functionality. The system wasn't a separate deliverable — it was the product strategy. Every screen was built from it, and every future screen would be too.",
         ],
       },
     ],
@@ -208,31 +229,450 @@ export const projects: Project[] = [
       {
         type: "single",
         images: [
-          { src: "/images/Project/Work/Teams/big-image.png", alt: "Teams dashboard overview" },
+          { src: "/images/Work/teams/1.png", alt: "dot.Teams dashboard overview" },
         ],
       },
       {
         type: "double",
         images: [
-          { src: "/images/Project/Work/Teams/img 4.png", alt: "User experience view" },
-          { src: "/images/Project/Work/Teams/img 5.png", alt: "Conversation tracking" },
+          { src: "/images/Work/teams/31.png", alt: "dot.Teams member management" },
+          { src: "/images/Work/teams/32.png", alt: "dot.Teams client portal" },
         ],
       },
       {
         type: "single",
         height: 672,
         images: [
-          { src: "/images/Project/Work/Teams/big-image-1.png", alt: "Teams insights analytics" },
+          { src: "/images/Work/teams/2.png", alt: "dot.Teams design system components" },
         ],
       },
     ],
     resultsGalleryWidths: [512, 576, 320, 384],
     results: {
-      heading: "Final Results",
+      heading: "A SaaS Product That Can Scale Without Breaking",
       paragraphs: [
-        "Delivered a production-ready design system and end-to-end UI for dot.Teams, covering onboarding, team management, subscriptions, and core workflows. Close collaboration with engineering ensured design fidelity across the platform.",
-        "The redesign improved clarity and adoption, supporting 97% template creation success, 243 reusable components, 70k+ customers reached, and $20M+ in subscription revenue — positioning dot.Teams as a scalable, revenue-driven product.",
+        "The outcome: a fully responsive, production-ready platform with polished interfaces covering onboarding, team management, subscription plans, and cross-platform interactions. User feedback confirmed increased satisfaction, smoother navigation, and stronger alignment with business goals. The launch contributed directly to higher subscription conversions.",
+        "More importantly, the system underneath means new features ship faster and look right on the first pass. dot.Teams went from a growing collection of screens to a product with architectural discipline.",
+        "243 Components Created · 97% Template Success Rate · 70K Customers Reached · +$20M Subscription Revenue",
       ],
     },
+    resultsGalleryImages: [
+      {
+        src: "/images/Work/teams/small-image 1.png",
+        alt: "dot.Teams interface detail 1",
+        width: 800,
+        height: 600,
+      },
+      {
+        src: "/images/Work/teams/small-image 2.png",
+        alt: "dot.Teams interface detail 2",
+        width: 800,
+        height: 600,
+      },
+      {
+        src: "/images/Work/teams/small-image 3.png",
+        alt: "dot.Teams interface detail 3",
+        width: 900,
+        height: 600,
+      },
+      {
+        src: "/images/Work/teams/small-image 4.png",
+        alt: "dot.Teams interface detail 4",
+        width: 500,
+        height: 600,
+      },
+      {
+        src: "/images/Work/teams/small-image 5.png",
+        alt: "dot.Teams interface detail 5",
+        width: 600,
+        height: 600,
+      },
+    ],
+  },
+  {
+    slug: "recordless",
+    title: "Recordless",
+    services: "App design • Mobile • AI product • Visual strategy",
+    thumbnail: "/images/Works/4.png",
+    heroImage: "/images/Work/Recordless/hero.png",
+    website: { label: "EMAIL", url: "mailto:torry.contact@gmail.com" },
+    industry: "An AI music player where the technology stays invisible and the experience stays human.",
+    timeline: "Aug 2022 – Apr 2023",
+    contentBlocks: [
+      {
+        heading: "Smart Technology, Simple Experience",
+        paragraphs: [
+          "Recordless is an AI-powered music production suite that lets users change songs according to mood and activity level — giving artists and listeners real control over how music sounds and feels. The scope covered full UX/UI design for the mobile app, plus a promotional website to introduce the platform to potential users and artists.",
+          "Foundation research from the team provided a starting point for understanding product goals, user groups, and interaction patterns. Secondary competitive research covered existing music players and design tools. Surveys and personas revealed the core audience: millennials drawn to song editing, unique interfaces, and personalized playlists. The design problem was clear — make adaptive AI behavior feel natural, not technical.",
+        ],
+      },
+      {
+        heading: "Keeping Adaptation Invisible",
+        paragraphs: [
+          "Mind maps, user journey diagrams, and app/site maps structured the ideation process before any visual work began. The interface was designed around emotional states rather than technical controls. Mood selection, activity context, and tonal preferences are captured through intuitive interactions — not settings panels or sliders.",
+          "The visual direction drew on CD-inspired gradients to set Recordless apart visually. Dark mode was chosen to let users sink into the music — making the arrangement process feel immersive rather than clinical. Purple primary and green secondary colors support key functionality without competing for attention. Track transitions, energy shifts, and playlist evolution were designed to feel gradual and natural rather than abrupt.",
+        ],
+      },
+    ],
+    imageBlocks: [
+      {
+        type: "single",
+        images: [
+          { src: "/images/Work/Recordless/1.png", alt: "Recordless app home screen" },
+        ],
+      },
+      {
+        type: "double",
+        images: [
+          { src: "/images/Work/Recordless/31.png", alt: "Recordless player view" },
+          { src: "/images/Work/Recordless/32.png", alt: "Recordless playlist view" },
+        ],
+      },
+      {
+        type: "single",
+        height: 672,
+        images: [
+          { src: "/images/Work/Recordless/2.png", alt: "Recordless mood and activity selection" },
+        ],
+      },
+    ],
+    resultsGalleryWidths: [512, 576, 320, 384],
+    results: {
+      heading: "AI That Feels Like Good Taste, Not Technology",
+      paragraphs: [
+        "User testing confirmed the approach: navigation, track creation mode, and vibe selection were all rated clear and useful. The complexity lives entirely in the backend. What the user sees is a clean, focused music player that seems to understand them.",
+        "A technically ambitious product shaped into something that feels effortless — which is the hardest kind of design to get right.",
+      ],
+    },
+    resultsGalleryImages: [
+      {
+        src: "/images/Work/Recordless/small-image 26.png",
+        alt: "Recordless interface detail 1",
+        width: 800,
+        height: 600,
+      },
+      {
+        src: "/images/Work/Recordless/small-image 27.png",
+        alt: "Recordless interface detail 2",
+        width: 600,
+        height: 600,
+      },
+      {
+        src: "/images/Work/Recordless/small-image 28.png",
+        alt: "Recordless interface detail 3",
+        width: 900,
+        height: 600,
+      },
+      {
+        src: "/images/Work/Recordless/small-image 29.png",
+        alt: "Recordless interface detail 4",
+        width: 800,
+        height: 600,
+      },
+      {
+        src: "/images/Work/Recordless/small-image 30.png",
+        alt: "Recordless interface detail 5",
+        width: 500,
+        height: 600,
+      },
+    ],
+  },
+  {
+    slug: "invamia",
+    title: "Invamia",
+    services: "Product design • SaaS platform • Dashboard • Responsive",
+    thumbnail: "/images/Works/5.png",
+    heroImage: "/images/Work/invamia/hero.png",
+    website: { label: "EMAIL", url: "mailto:torry.contact@gmail.com" },
+    industry: "Redesigning a data-heavy ad platform so media owners actually want to use it.",
+    timeline: "Mar 2020 – Jun 2020",
+    contentBlocks: [
+      {
+        heading: "A Powerful Platform That Was Hard to Use",
+        paragraphs: [
+          "Invamia is a site optimization and revenue intelligence platform for media owners — offering tools to check site speed, receive optimization recommendations, and balance revenue with user engagement. The platform was functional but the experience didn't match the product's ambition.",
+          "The scope covered a 6-month redesign of the landing page, the full dashboard platform, a design system, and adaptive screens for all devices. The goal: improve usability, increase engagement, drive better business outcomes, and raise overall user satisfaction.",
+        ],
+      },
+      {
+        heading: "From User Research to System-Level Redesign",
+        paragraphs: [
+          "User flows were mapped first, then refined through research findings and team input — setting clear goals for the redesign grounded in real user behavior. Wireframes defined the structure and layout before any visual investment, ensuring the platform met user needs before development began.",
+          "The visual design phase produced a full design system: visual language, typography, color palette, and component library applied consistently throughout the platform. Every screen was designed to be accessible across a wide range of users while maintaining scalability for future growth. Final responsive designs were delivered with implementation support throughout development.",
+        ],
+      },
+    ],
+    imageBlocks: [
+      {
+        type: "single",
+        height: 672,
+        fit: "contain",
+        images: [
+          { src: "/images/Work/invamia/1.png", alt: "Ad publishing dashboard overview" },
+        ],
+      },
+      {
+        type: "full",
+        height: 672,
+        fit: "contain",
+        images: [
+          { src: "/images/Work/invamia/2.png", alt: "Invamia design system overview" },
+        ],
+      },
+      {
+        type: "beforeAfter",
+        height: 672,
+        fit: "contain",
+        images: [
+          { src: "/images/Work/invamia/before.png", alt: "Before redesign" },
+          { src: "/images/Work/invamia/after.png", alt: "After redesign" },
+        ],
+      },
+      {
+        type: "single",
+        height: 672,
+        fit: "contain",
+        images: [
+          { src: "/images/Work/invamia/video.png", alt: "Ad publishing analytics and performance view" },
+        ],
+      },
+    ],
+    galleryImages: [
+      {
+        src: "/images/Work/invamia/carousel/small-image 1.png",
+        alt: "Ad publishing interface detail 1",
+        width: 800,
+        height: 600,
+      },
+      {
+        src: "/images/Work/invamia/carousel/small-image 2.png",
+        alt: "Ad publishing interface detail 2",
+        width: 800,
+        height: 600,
+      },
+      {
+        src: "/images/Work/invamia/carousel/small-image 3.png",
+        alt: "Ad publishing interface detail 3",
+        width: 900,
+        height: 600,
+      },
+      {
+        src: "/images/Work/invamia/carousel/small-image 4.png",
+        alt: "Ad publishing interface detail 4",
+        width: 500,
+        height: 600,
+      },
+      {
+        src: "/images/Work/invamia/carousel/small-image 5.png",
+        alt: "Ad publishing interface detail 5",
+        width: 600,
+        height: 600,
+      },
+    ],
+    results: {
+      heading: "Measurable Clarity, Measurable Results",
+      paragraphs: [
+        "After the redesign, the overall success rate for adding websites and generating site data increased by 65%. User surveys showed that more than 89% of users were satisfied with the new design and intended to continue using the platform for their business goals.",
+        "A data-heavy tool that once felt overwhelming became something media owners could actually navigate with confidence.",
+        "+65% Success Rate Increase · 89% User Satisfaction · 33.3K Unique Users · 54 Components Created",
+      ],
+    },
+  },
+  {
+    slug: "ibnb",
+    title: "iBNB",
+    services: "App design • Mobile • Fintech • Web • Dashboard",
+    thumbnail: "/images/Works/6.png",
+    heroImage: "/images/Work/ibnb/hero-image.png",
+    website: { label: "EMAIL", url: "mailto:torry.contact@gmail.com" },
+    industry: "Making decentralized finance feel simple enough for daily use.",
+    timeline: "Sep 2021 – Jan 2022",
+    contentBlocks: [
+      {
+        heading: "Complex Financial Logic, Zero Tolerance for Confusion",
+        paragraphs: [
+          "iBNB is a decentralized finance ecosystem offering a secure wallet for trading, automated dividend collection, and access to financial content. The product serves investors who interact with real money daily — meaning every interaction has to be precise, trustworthy, and frictionless.",
+          "The scope covered a full redesign of the mobile app, website, and dashboard with adaptive versions for mobile and tablet. The core challenge: translate complex financial operations into an interface that feels simple without hiding critical information.",
+        ],
+      },
+      {
+        heading: "Structure First, Then Visual Identity",
+        paragraphs: [
+          "User flows mapped every path through the web and mobile applications, refined through research and team collaboration. The wireframing phase focused on identifying key features, mapping task-based user journeys, and validating structure before investing in visual design.",
+          "The brand retained its signature yellow, updated to a more modern tone. A complete style guide was developed for mobile and desktop. The visual direction combined flat design with subtle background gradients and light noise textures — creating an interface that feels premium and approachable at the same time. Every financial interaction was designed for clarity: balances, dividends, and transaction history are surfaced without requiring users to dig.",
+        ],
+      },
+    ],
+    imageBlocks: [
+      {
+        type: "single",
+        images: [
+          { src: "/images/Work/ibnb/images/ibnb-1.png", alt: "Crypto finance app screen 1" },
+        ],
+      },
+      {
+        type: "full",
+        height: 672,
+        images: [
+          { src: "/images/Work/ibnb/images/ibnb-2.png", alt: "Crypto finance app screen 2" },
+        ],
+      },
+      {
+        type: "double",
+        images: [
+          { src: "/images/Work/ibnb/images/ibnb-3.png", alt: "Crypto finance app screen 3" },
+          { src: "/images/Work/ibnb/images/ibnb-4.png", alt: "Crypto finance app screen 4" },
+        ],
+      },
+      {
+        type: "double",
+        images: [
+          { src: "/images/Work/ibnb/images/ibnb-5.png", alt: "Crypto finance app screen 5" },
+          { src: "/images/Work/ibnb/images/ibnb-6.png", alt: "Crypto finance app screen 6" },
+        ],
+      },
+      {
+        type: "full",
+        height: 672,
+        images: [
+          { src: "/images/Work/ibnb/images/ibnb-7.png", alt: "Crypto finance app screen 7" },
+        ],
+      },
+      {
+        type: "full",
+        height: 672,
+        images: [
+          { src: "/images/Work/ibnb/hero-image.png", alt: "Crypto finance hero detail" },
+        ],
+      },
+      {
+        type: "single",
+        height: 672,
+        images: [
+          { src: "/images/Work/ibnb/images/ibnb-8.png", alt: "Crypto finance app screen 8" },
+        ],
+      },
+    ],
+    results: {
+      heading: "Finance Made Comfortable",
+      paragraphs: [
+        "The redesign delivered a cohesive experience across app, website, and dashboard. The dividend collection process — previously the biggest source of friction — became straightforward and transparent.",
+        "A product dealing with real financial stakes, shaped into something that feels calm and controlled rather than intimidating.",
+      ],
+    },
+    resultsGalleryImages: [
+      {
+        src: "/images/Work/ibnb/carousel/carousel-1.png",
+        alt: "iBNB carousel image 1",
+        width: 900,
+        height: 600,
+      },
+      {
+        src: "/images/Work/ibnb/carousel/carousel-2.png",
+        alt: "iBNB carousel image 2",
+        width: 500,
+        height: 600,
+      },
+      {
+        src: "/images/Work/ibnb/carousel/carousel-3.png",
+        alt: "iBNB carousel image 3",
+        width: 600,
+        height: 600,
+      },
+      {
+        src: "/images/Work/ibnb/carousel/carousel-4.png",
+        alt: "iBNB carousel image 4",
+        width: 500,
+        height: 600,
+      },
+      {
+        src: "/images/Work/ibnb/carousel/carousel-5.png",
+        alt: "iBNB carousel image 5",
+        width: 600,
+        height: 600,
+      },
+    ],
+  },
+  {
+    slug: "vidverto",
+    title: "Vidverto",
+    services: "Product design • Website • Branding • Responsive",
+    thumbnail: "/images/Works/7.png",
+    heroImage: "/images/Work/vidverto/hero.png",
+    website: { label: "EMAIL", url: "mailto:torry.contact@gmail.com" },
+    industry: "Redesigning an ad-tech platform and building the brand around it.",
+    timeline: "Jun 2021 – Sep 2021",
+    contentBlocks: [
+      {
+        heading: "Three User Types, One Platform, No Clear Story",
+        paragraphs: [
+          "Vidverto is an enterprise-level video content and monetization platform providing programmatic advertising solutions. The platform serves three distinct audiences — Publishers (60%), Advertisers (25%), and Content Owners (15%) — each with different goals, different pain points, and different reasons to trust the product.",
+          "The scope went beyond screens: a full website redesign with adaptive mobile versions, plus branding materials including pitch decks, social media assets, stationery, and apparel. The design sprint was structured in five stages: discovery, UX mapping and wireframing, UI design, branding, and user testing.",
+        ],
+      },
+      {
+        heading: "Designing for Three Audiences Without Losing Focus",
+        paragraphs: [
+          "Research and user analysis defined clear personas and priorities for each audience segment. The site architecture was built to serve all three groups from a single entry point — with dedicated landing sections showing benefits specific to each user type, \"How to Connect\" tutorials, and targeted CTAs.",
+          "The visual concept drew on a galaxy and radio wave metaphor — comparing advertisement technology to futuristic space communications. This gave Vidverto a visual identity that stands apart in a market full of generic corporate ad-tech sites. The brand font was preserved but adapted for broader graphic use, with a full guidelines system covering colors, typography, and logo applications across digital and physical materials.",
+        ],
+      },
+    ],
+    imageBlocks: [
+      {
+        type: "single",
+        images: [
+          { src: "/images/Work/vidverto/1.png", alt: "Vidverto website overview" },
+        ],
+      },
+      {
+        type: "double",
+        images: [
+          { src: "/images/Work/vidverto/31.png", alt: "Vidverto publisher interface" },
+          { src: "/images/Work/vidverto/32.png", alt: "Vidverto advertiser interface" },
+        ],
+      },
+      {
+        type: "single",
+        height: 672,
+        images: [
+          { src: "/images/Work/vidverto/2.png", alt: "Vidverto brand system" },
+        ],
+      },
+    ],
+    results: {
+      heading: "A Platform and a Brand, Built Together",
+      paragraphs: [
+        "The final delivery included a fully responsive website, complete branding system, and marketing assets actively used by the Vidverto team for announcements, promotions, and company updates. The website achieved a 97% Google PageSpeed score and contributed to a 65% increase in conversion rate.",
+        "An ad-tech company that previously blended into its market now has a visual identity and digital presence that matches the sophistication of its product.",
+        "97% PageSpeed Score · +65% Conversion Rate Increase · 23K Users After Redesign",
+      ],
+    },
+    resultsGalleryImages: [
+      {
+        src: "/images/Work/vidverto/small-image 17.png",
+        alt: "Vidverto interface detail 1",
+        width: 800,
+        height: 600,
+      },
+      {
+        src: "/images/Work/vidverto/small-image 18.png",
+        alt: "Vidverto interface detail 2",
+        width: 197,
+        height: 600,
+      },
+      {
+        src: "/images/Work/vidverto/small-image 22.png",
+        alt: "Vidverto interface detail 3",
+        width: 900,
+        height: 600,
+      },
+      {
+        src: "/images/Work/vidverto/small-image 25.png",
+        alt: "Vidverto interface detail 4",
+        width: 278,
+        height: 600,
+      },
+    ],
   },
 ];

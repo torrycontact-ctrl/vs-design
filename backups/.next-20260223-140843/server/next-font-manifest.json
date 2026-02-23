@@ -1,0 +1,49 @@
+{
+  "app": {
+    "[project]/src/app/_not-found/page": [
+      "static/media/PPNeueMontreal_Book-s.p.5843f23d.woff2",
+      "static/media/PPNeueMontreal_Medium-s.p.2760d71d.woff2",
+      "static/media/PPNeueMontreal_Bold-s.p.e49a383d.woff2",
+      "static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2",
+      "static/media/e41d5df559864f9e-s.p.380d09ea.woff2"
+    ],
+    "[project]/src/app/about/page": [
+      "static/media/PPNeueMontreal_Book-s.p.5843f23d.woff2",
+      "static/media/PPNeueMontreal_Medium-s.p.2760d71d.woff2",
+      "static/media/PPNeueMontreal_Bold-s.p.e49a383d.woff2",
+      "static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2",
+      "static/media/e41d5df559864f9e-s.p.380d09ea.woff2"
+    ],
+    "[project]/src/app/contact/page": [
+      "static/media/PPNeueMontreal_Book-s.p.5843f23d.woff2",
+      "static/media/PPNeueMontreal_Medium-s.p.2760d71d.woff2",
+      "static/media/PPNeueMontreal_Bold-s.p.e49a383d.woff2",
+      "static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2",
+      "static/media/e41d5df559864f9e-s.p.380d09ea.woff2"
+    ],
+    "[project]/src/app/page": [
+      "static/media/PPNeueMontreal_Book-s.p.5843f23d.woff2",
+      "static/media/PPNeueMontreal_Medium-s.p.2760d71d.woff2",
+      "static/media/PPNeueMontreal_Bold-s.p.e49a383d.woff2",
+      "static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2",
+      "static/media/e41d5df559864f9e-s.p.380d09ea.woff2"
+    ],
+    "[project]/src/app/works/[slug]/page": [
+      "static/media/PPNeueMontreal_Book-s.p.5843f23d.woff2",
+      "static/media/PPNeueMontreal_Medium-s.p.2760d71d.woff2",
+      "static/media/PPNeueMontreal_Bold-s.p.e49a383d.woff2",
+      "static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2",
+      "static/media/e41d5df559864f9e-s.p.380d09ea.woff2"
+    ],
+    "[project]/src/app/works/page": [
+      "static/media/PPNeueMontreal_Book-s.p.5843f23d.woff2",
+      "static/media/PPNeueMontreal_Medium-s.p.2760d71d.woff2",
+      "static/media/PPNeueMontreal_Bold-s.p.e49a383d.woff2",
+      "static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2",
+      "static/media/e41d5df559864f9e-s.p.380d09ea.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

@@ -1,15 +1,26 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import type { GalleryImage } from "@/lib/projects";
 
 interface ImageGalleryProps {
   images: GalleryImage[];
+  autoScroll?: boolean;
+  autoScrollSpeed?: number;
+  pauseOnHover?: boolean;
 }
 
-export default function ImageGallery({ images }: ImageGalleryProps) {
+export default function ImageGallery({
+  images,
+  autoScroll = true,
+  autoScrollSpeed = 28,
+  pauseOnHover = true,
+}: ImageGalleryProps) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const rafRef = useRef<number | null>(null);
+  const lastTimeRef = useRef<number | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   const scroll = (direction: "left" | "right") => {
     const container = scrollRef.current;
@@ -24,10 +35,43 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
     container.scrollBy({ left: delta, behavior: "smooth" });
   };
 
+  useEffect(() => {
+    if (!autoScroll) return;
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const step = (time: number) => {
+      if (lastTimeRef.current === null) lastTimeRef.current = time;
+      const delta = time - lastTimeRef.current;
+      lastTimeRef.current = time;
+
+      if (!isPaused) {
+        const trackWidth = container.scrollWidth / 2;
+        if (trackWidth > container.clientWidth + 1) {
+          container.scrollLeft += (autoScrollSpeed * delta) / 1000;
+          if (container.scrollLeft >= trackWidth) {
+            container.scrollLeft -= trackWidth;
+          }
+        }
+      }
+
+      rafRef.current = requestAnimationFrame(step);
+    };
+
+    rafRef.current = requestAnimationFrame(step);
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+      lastTimeRef.current = null;
+    };
+  }, [autoScroll, autoScrollSpeed, isPaused, images.length]);
+
   return (
     <div className="relative">
       {/* Navigation buttons — desktop only */}
-      <div className="hidden lg:flex items-center gap-3 justify-end mb-6">
+      {!autoScroll && (
+        <div className="hidden lg:flex items-center gap-3 justify-end mb-6">
         <button
           type="button"
           aria-label="Scroll gallery left"
@@ -62,18 +106,29 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
             <path d="M5 12H19M19 12L12 5M19 12L12 19" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
-      </div>
+        </div>
+      )}
 
       {/* Scrollable gallery */}
       <div
         ref={scrollRef}
-        className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide"
+        onMouseEnter={() => pauseOnHover && setIsPaused(true)}
+        onMouseLeave={() => pauseOnHover && setIsPaused(false)}
+        className={[
+          "flex gap-4",
+          autoScroll
+            ? "overflow-hidden"
+            : "overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide",
+        ].join(" ")}
       >
-        {images.map((img, i) => (
+        {(autoScroll ? [...images, ...images] : images).map((img, i) => (
           <div
-            key={i}
+            key={`${img.src}-${i}`}
             data-gallery-item
-            className="shrink-0 snap-start overflow-hidden rounded-2xl"
+            className={[
+              "shrink-0 overflow-hidden rounded-2xl",
+              autoScroll ? "" : "snap-start",
+            ].join(" ")}
             style={{ width: img.width, height: img.height }}
           >
             <Image

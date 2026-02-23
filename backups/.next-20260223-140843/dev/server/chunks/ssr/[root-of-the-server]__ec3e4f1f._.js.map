@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/vikki/vs-design/src/components/sections/WorksSection.tsx"],"sourcesContent":["export default function WorksSection() {\n  return (\n    <section>\n      <h2>Works Section</h2>\n    </section>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;kBACC,cAAA,8OAAC;sBAAG;;;;;;;;;;;AAGV"}},
+    {"offset": {"line": 43, "column": 0}, "map": {"version":3,"sources":["file:///Users/vikki/vs-design/src/app/works/page.tsx"],"sourcesContent":["import WorksSection from \"@/components/sections/WorksSection\";\n\nexport const metadata = {\n  title: \"Works – VS Design\",\n  description: \"Selected case studies and design projects.\",\n};\n\nexport default function WorksPage() {\n  return (\n    <main>\n      <WorksSection />\n    </main>\n  );\n}\n"],"names":[],"mappings":";;;;;;;AAAA;;;AAEO,MAAM,WAAW;IACtB,OAAO;IACP,aAAa;AACf;AAEe,SAAS;IACtB,qBACE,8OAAC;kBACC,cAAA,8OAAC,yJAAY;;;;;;;;;;AAGnB"}}]
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/vikki/vs-design/src/components/sections/AboutSection.tsx"],"sourcesContent":["export default function AboutSection() {\n  return (\n    <section>\n      <h2>About Section</h2>\n    </section>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;kBACC,cAAA,8OAAC;sBAAG;;;;;;;;;;;AAGV"}},
+    {"offset": {"line": 43, "column": 0}, "map": {"version":3,"sources":["file:///Users/vikki/vs-design/src/app/about/page.tsx"],"sourcesContent":["import AboutSection from \"@/components/sections/AboutSection\";\n\nexport const metadata = {\n  title: \"About – VS Design\",\n  description: \"About the designer — background, skills, and experience.\",\n};\n\nexport default function AboutPage() {\n  return (\n    <main>\n      <AboutSection />\n    </main>\n  );\n}\n"],"names":[],"mappings":";;;;;;;AAAA;;;AAEO,MAAM,WAAW;IACtB,OAAO;IACP,aAAa;AACf;AAEe,SAAS;IACtB,qBACE,8OAAC;kBACC,cAAA,8OAAC,yJAAY;;;;;;;;;;AAGnB"}}]
+}

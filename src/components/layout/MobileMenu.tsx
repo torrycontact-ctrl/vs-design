@@ -20,7 +20,7 @@ function getDarkSnapshot() {
   return document.documentElement.classList.contains("dark");
 }
 
-const getDarkServerSnapshot = () => false;
+const getDarkServerSnapshot = () => true;
 const noopSubscribe = () => () => {};
 const getMountedSnapshot = () => true;
 const getMountedServerSnapshot = () => false;
@@ -79,10 +79,10 @@ export default function MobileMenu({
 
   return (
     <div
-      className={`fixed inset-x-0 top-0 z-50 backdrop-blur-[32px] bg-white/12 transition-all duration-500 no-color-transition lg:hidden ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 no-color-transition lg:hidden ${
         isOpen
-          ? "pointer-events-auto opacity-100"
-          : "pointer-events-none opacity-0"
+          ? "pointer-events-auto opacity-100 glass-blur"
+          : "pointer-events-none opacity-0 backdrop-blur-0 bg-transparent"
       }`}
       style={{ height: "471px" }}
     >

@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/works/layout,_N_T_/works/[slug]/layout,_N_T_/works/[slug]/page,_N_T_/works/fintech-wallet"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/works/$d$slug/__PAGE__",
+    "/works/$d$slug",
+    "/works",
+    "/_index",
+    "/_head"
+  ]
+}

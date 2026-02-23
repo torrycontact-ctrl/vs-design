@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function WorksPage() {
   return (
-    <main>
+    <main className="flex-1 min-h-0 overflow-y-auto">
       <WorksSection />
     </main>
   );
