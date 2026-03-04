@@ -106,23 +106,21 @@ export default function Navbar() {
 
   const subscribeScroll = useCallback(
     (callback: () => void) => {
-      const scrollContainer = document.querySelector("main");
-      scrollContainer?.addEventListener("scroll", callback, { passive: true });
       window.addEventListener("scroll", callback, { passive: true });
+      document.addEventListener("scroll", callback, { passive: true, capture: true });
       return () => {
-        scrollContainer?.removeEventListener("scroll", callback);
         window.removeEventListener("scroll", callback);
+        document.removeEventListener("scroll", callback, { capture: true });
       };
     },
-    [pathname],
+    [],
   );
 
   const getScrollSnapshot = useCallback(() => {
     const el = document.querySelector("main");
     const mainScrolled = el ? el.scrollTop > 10 : false;
-    const windowScrolled = window.scrollY > 10;
-    return mainScrolled || windowScrolled;
-  }, [pathname]);
+    return mainScrolled || window.scrollY > 10;
+  }, []);
 
   const scrolled = useSyncExternalStore(subscribeScroll, getScrollSnapshot, () => false);
 
