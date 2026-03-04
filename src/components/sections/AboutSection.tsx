@@ -378,18 +378,6 @@ export default function AboutSection() {
                 <div className="grid grid-rows-[0fr] transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr]">
                   <div className="overflow-hidden">
                     <p className="p3 pb-5 text-black dark:text-white md:max-w-[448px]">{step.desc}</p>
-                    {/* Video — mobile only, shown in expanded section */}
-                    <div className="mb-5 overflow-hidden rounded-[12px] md:hidden">
-                      <video
-                        className="w-full"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                      >
-                        <source src={step.video} type={step.videoType} />
-                      </video>
-                    </div>
                   </div>
                 </div>
 
