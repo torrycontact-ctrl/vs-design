@@ -3,6 +3,7 @@ import { Instrument_Serif } from "next/font/google";
 import localFont from "next/font/local";
 import Navbar from "@/components/layout/Navbar";
 import FooterWrapper from "@/components/layout/FooterWrapper";
+import HomeBackgroundWrapper from "@/components/layout/HomeBackgroundWrapper";
 import "./globals.css";
 
 const ppNeueMontreal = localFont({
@@ -35,6 +36,14 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
+const splineSansMono = localFont({
+  src: "../../public/fonts/SplineSansMono-Light.ttf",
+  weight: "300",
+  style: "normal",
+  variable: "--font-mono",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "VS Design – Product Designer Portfolio",
   description: "Product Designer portfolio showcasing UX/UI case studies and design work.",
@@ -46,11 +55,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${ppNeueMontreal.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
-      <body className="flex h-screen flex-col overflow-hidden antialiased text-[var(--color-fg)] transition-colors duration-300">
-        <Navbar />
-        {children}
-        <FooterWrapper />
+    <html lang="en" className={`dark ${ppNeueMontreal.variable} ${instrumentSerif.variable} ${splineSansMono.variable}`} suppressHydrationWarning>
+      <body className="flex h-screen flex-col overflow-hidden antialiased text-[var(--color-fg)] transition-colors duration-300" suppressHydrationWarning>
+        <HomeBackgroundWrapper>
+          <Navbar />
+          {children}
+          <FooterWrapper />
+        </HomeBackgroundWrapper>
       </body>
     </html>
   );

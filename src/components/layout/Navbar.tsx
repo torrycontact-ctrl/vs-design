@@ -18,7 +18,7 @@ function getDarkSnapshot() {
 }
 
 function getDarkServerSnapshot() {
-  return false;
+  return true;
 }
 
 const noopSubscribe = () => () => {};
@@ -38,7 +38,7 @@ function LogoIcon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      className="no-transition"
+      className="logo-icon no-transition"
     >
       <path fillRule="evenodd" clipRule="evenodd" d="M28.0964 36.3171C29.0087 34.9261 29.3948 33.0679 29.0493 31.7305C28.7476 30.5626 27.9525 29.4012 27.4179 27.8458C26.5401 25.292 26.6979 21.8841 27.323 21.256C28.215 20.3598 28.6466 22.2831 28.419 24.3094C28.2547 25.7712 28.2349 26.3029 28.3076 27.3009C28.4245 28.9076 28.8713 29.7481 29.9501 30.3907C31.2304 31.1533 32.6209 30.9937 34.1064 29.9138C34.7645 29.4355 36.0836 28.1704 36.4579 27.6586C36.8066 27.1819 37.3397 26.421 37.5911 26.0606C37.6728 25.9436 37.6589 25.785 37.5588 25.6835L35.5747 23.6727L34.0114 22.1175C33.8863 21.993 33.6812 22.0059 33.5721 22.1448C33.3715 22.4002 33.0882 22.7581 33.0359 22.8097C32.8146 23.028 32.4751 23.1875 32.1104 23.1394C31.3637 23.0408 31.2664 22.4128 31.4422 21.2935C31.5459 20.6334 31.5175 20.0883 31.356 19.6398C31.2247 19.275 31.094 19.1252 30.8439 18.8614C29.9954 17.9664 28.3047 18.1154 27.7394 18.327C26.5205 18.7833 24.6163 21.0473 24.6395 23.618C24.6465 24.3951 25.5983 28.1569 24.9202 29.9903C24.6243 30.7904 24.2247 31.5055 23.8213 31.8764C23.5236 32.1501 22.4432 32.799 21.8974 33.1202C21.7337 33.2166 21.7008 33.4406 21.83 33.5801L23.8319 35.741L25.9326 37.8304C26.0265 37.9237 26.1704 37.9429 26.2834 37.8742C26.5577 37.7074 27.0634 37.3855 27.3809 37.0965C27.6863 36.8185 28.0163 36.4392 28.0964 36.3171Z" fill="#DA2777"/>
       <path fillRule="evenodd" clipRule="evenodd" d="M12.0478 3.68026C11.1355 5.07133 10.7494 6.92946 11.0949 8.26686C11.3966 9.43475 12.1917 10.5962 12.7263 12.1516C13.6042 14.7054 13.4463 18.1133 12.8212 18.7414C11.9292 19.6376 11.4976 17.7143 11.7253 15.688C11.8895 14.2262 11.9093 13.6944 11.8367 12.6965C11.7198 11.0898 11.2729 10.2493 10.1941 9.6067C8.91383 8.84414 7.52337 9.00366 6.03784 10.0836C5.37972 10.5619 4.06059 11.827 3.6863 12.3388C3.33761 12.8154 2.80456 13.5764 2.5531 13.9368C2.47143 14.0538 2.48531 14.2124 2.58547 14.3139L4.56956 16.3247L6.13279 17.8799C6.25794 18.0044 6.46306 17.9915 6.57217 17.8526C6.77274 17.5972 7.05601 17.2393 7.10834 17.1877C7.3296 16.9694 7.66911 16.8099 8.0338 16.858C8.78051 16.9566 8.87784 17.5845 8.70202 18.7039C8.59832 19.364 8.62673 19.909 8.7882 20.3576C8.91949 20.7224 9.05022 20.8722 9.30035 21.136C10.1488 22.031 11.8395 21.882 12.4049 21.6704C13.6238 21.2141 15.528 18.9501 15.5047 16.3794C15.4977 15.6023 14.546 11.8405 15.224 10.0071C15.5199 9.20701 15.9195 8.49189 16.3229 8.12099C16.6206 7.84728 17.701 7.19843 18.2469 6.87716C18.4105 6.78084 18.4434 6.55683 18.3142 6.41734L16.3123 4.2564L14.2116 2.16703C14.1177 2.07364 13.9738 2.05446 13.8608 2.12319C13.5866 2.28996 13.0808 2.61188 12.7633 2.9009C12.4579 3.1789 12.1279 3.55816 12.0478 3.68026Z" fill="#DA2777"/>
@@ -50,7 +50,7 @@ function LogoIcon() {
 
 /* ── Main nav links ──────────────────────────────────────────── */
 const NAV_LINKS = [
-  { href: "/works", label: "Works" },
+  { href: "/works", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -62,9 +62,7 @@ function ThemeToggle() {
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
-    const prefersDark =
-      stored === "dark" ||
-      (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    const prefersDark = stored ? stored === "dark" : true;
     document.documentElement.classList.toggle("dark", prefersDark);
   }, []);
 
@@ -106,38 +104,39 @@ export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const isProjectPage = /^\/works\/[^/]+$/.test(pathname);
-
   const subscribeScroll = useCallback(
     (callback: () => void) => {
-      if (!isProjectPage) return () => {};
       const scrollContainer = document.querySelector("main");
-      if (!scrollContainer) return () => {};
-      scrollContainer.addEventListener("scroll", callback, { passive: true });
-      return () => scrollContainer.removeEventListener("scroll", callback);
+      scrollContainer?.addEventListener("scroll", callback, { passive: true });
+      window.addEventListener("scroll", callback, { passive: true });
+      return () => {
+        scrollContainer?.removeEventListener("scroll", callback);
+        window.removeEventListener("scroll", callback);
+      };
     },
-    [isProjectPage],
+    [pathname],
   );
 
   const getScrollSnapshot = useCallback(() => {
-    if (!isProjectPage) return false;
     const el = document.querySelector("main");
-    return el ? el.scrollTop > 10 : false;
-  }, [isProjectPage]);
+    const mainScrolled = el ? el.scrollTop > 10 : false;
+    const windowScrolled = window.scrollY > 10;
+    return mainScrolled || windowScrolled;
+  }, [pathname]);
 
   const scrolled = useSyncExternalStore(subscribeScroll, getScrollSnapshot, () => false);
 
-  const headerBg = isProjectPage && scrolled
-    ? "bg-white dark:bg-black transition-colors duration-200"
+  const headerBg = !menuOpen && scrolled
+    ? "glass-blur transition-all duration-500 no-color-transition"
     : "";
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 ${headerBg}`}>
-      <nav className="mx-auto flex h-16 max-w-[var(--max-w-desktop)] items-center justify-between px-[var(--container-padding-mobile)] lg:px-[var(--container-padding-desktop)]">
+      <nav className="mx-auto flex h-16 max-w-desktop items-center justify-between px-[var(--container-padding-mobile)] lg:px-[var(--container-padding-desktop)]">
         {/* ── Logo ────────────────────────────────── */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="logo-link group flex items-center gap-3">
           <LogoIcon />
-          <span className="link-black">
+          <span className="link-black text-[14px] transition-opacity group-hover:opacity-60">
             VS DESIGN
           </span>
         </Link>
@@ -148,7 +147,7 @@ export default function Navbar() {
             <li key={href}>
               <Link
                 href={href}
-                className="link-black transition-opacity hover:opacity-60"
+                className="link-black text-[14px] transition-opacity hover:opacity-60"
               >
                 {label}
               </Link>
@@ -161,7 +160,7 @@ export default function Navbar() {
           <ThemeToggle />
           <Link
             href="mailto:torry.contact@gmail.com"
-            className="link-black flex items-center gap-1.5 transition-opacity hover:opacity-60"
+            className="link-arrow-rotate link-black text-[14px] flex items-center gap-1.5 transition-opacity hover:opacity-60"
           >
             Email
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">

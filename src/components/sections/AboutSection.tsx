@@ -1,55 +1,59 @@
 import Image from "next/image";
 import Link from "next/link";
 import ServiceTag from "@/components/ServiceTag";
+import RevealOnScroll from "@/components/RevealOnScroll";
+import SiteFooter from "@/components/SiteFooter";
 
 /* ── Service tags data ──────────────────────────────────────── */
-const servicesRow1 = [
-  { label: "AI DESIGN", dot: "blue" },
-  { label: "VIBE CODING", dot: "purple" },
-  { label: "ART DIRECTION", dot: "orange" },
+const services = [
   { label: "PRODUCT DESIGN", dot: "green" },
   { label: "UI/UX DESIGN", dot: "blue" },
-  { label: "WEB DESIGN", dot: "red" },
-  { label: "MOBILE APP", dot: "purple" },
-  { label: "SAAS DESIGN", dot: "orange" },
-];
-
-const servicesRow2 = [
-  { label: "RESEARCH", dot: "green" },
-  { label: "INTERACTIVE DESIGN", dot: "blue" },
-  { label: "PROTOTYPING", dot: "red" },
-  { label: "GRAPHIC DESIGN", dot: "purple" },
-  { label: "VISUAL IDENTITY", dot: "orange" },
-  { label: "DISCOVERY", dot: "green" },
-  { label: "DESIGN CONSULTATION", dot: "blue" },
+  { label: "DESIGN SYSTEMS", dot: "orange" },
+  { label: "WEB & MOBILE APPS", dot: "red" },
+  { label: "SAAS PLATFORMS", dot: "purple" },
+  { label: "AI PRODUCTS", dot: "blue" },
+  { label: "RESEARCH & DISCOVERY", dot: "green" },
+  { label: "PROTOTYPING", dot: "orange" },
+  { label: "BRAND IDENTITY", dot: "purple" },
+  { label: "ART DIRECTION", dot: "orange" },
 ];
 
 /* ── Design process steps ───────────────────────────────────── */
 const processSteps = [
   {
     num: "01",
-    title: "Research",
-    desc: "Understanding the product, market, and users. Includes competitor review, user context, and a clear project kickoff.",
+    title: "Let's Have a Call.",
+    desc: "Communication is key. Let's define your main goals and current challenges. During our first call, I'll provide clear direction on the next steps. Afterward, you'll receive a personalized proposal so we're aligned on timeline and budget.",
+    video: "/images/About/How i work/1-call.mp4",
+    videoType: "video/mp4",
   },
   {
     num: "02",
-    title: "Discovery",
-    desc: "Aligning on direction before design begins. Explores ideas, visual references, and early insights to set a strong foundation.",
+    title: "Ideate and Define.",
+    desc: "Let's bring structure. Depending on the product requirements, I provide a detailed UX audit to map out user flows, information architecture, and wireframes. This is where messy ideas become a clear, testable system.",
+    video: "/images/About/How i work/2-ideate.mp4",
+    videoType: "video/mp4",
   },
   {
     num: "03",
-    title: "User Experience",
-    desc: "Defining structure and logic. User journeys, information architecture, and wireframes focused on clarity and flow.",
+    title: "Conceptualize.",
+    desc: "We align on direction together. I explore ideas, gather references, and develop early concepts so we build on a shared vision from day one.",
+    video: "/images/About/How i work/3-concept.mp4",
+    videoType: "video/mp4",
   },
   {
     num: "04",
-    title: "User Interface",
-    desc: "Turning structure into polished, usable interfaces. UI systems, interactions, and prototypes ready for validation and build.",
+    title: "User Interface.",
+    desc: "Structure and visual direction become a real product. Polished screens, a cohesive design system, and interactive prototypes.",
+    video: "/images/About/How i work/4-ui.webm",
+    videoType: "video/webm",
   },
   {
     num: "05",
-    title: "Delivery & Support",
-    desc: "Supporting implementation and iteration. Design handoff, testing support, and refinement based on real usage.",
+    title: "Handoff and Maintenance.",
+    desc: "Full handoff and delivery of a clean, structured design system built for implementation. Your product is ready to launch.",
+    video: "/images/About/How i work/5-handoff.mp4",
+    videoType: "video/mp4",
   },
 ];
 
@@ -68,6 +72,31 @@ function LogoDevSkiller() {
       <path opacity="0.4" d="M101.788 10.2385C101.788 9.98316 101.736 9.72396 101.632 9.45968C101.529 9.19625 101.373 8.95357 101.166 8.73206C100.959 8.51141 100.7 8.32802 100.39 8.18318C100.079 8.03875 99.7078 7.96633 99.2768 7.96633C98.8453 7.96633 98.4654 8.03875 98.1382 8.18318C97.8098 8.32802 97.5384 8.51141 97.3225 8.73206C97.1065 8.95357 96.943 9.19625 96.8309 9.45968C96.7184 9.72396 96.6626 9.98316 96.6626 10.2385H101.788ZM105.049 16.1878C104.91 16.2734 104.703 16.4135 104.427 16.6092C104.151 16.8049 103.793 16.9963 103.353 17.1835C102.913 17.3711 102.391 17.5367 101.788 17.6816C101.183 17.826 100.493 17.8984 99.7169 17.8984C98.6813 17.8984 97.7497 17.7409 96.9215 17.4262C96.0929 17.1115 95.3901 16.6727 94.8118 16.1111C94.2335 15.5495 93.7938 14.8728 93.4916 14.0812C93.1898 13.29 93.0391 12.4176 93.0391 11.4642C93.0391 10.6307 93.1812 9.82603 93.4662 9.0514C93.7509 8.27677 94.1605 7.60041 94.6954 7.02145C95.2304 6.44291 95.886 5.97915 96.6626 5.63017C97.4393 5.28118 98.319 5.10669 99.3026 5.10669C100.286 5.10669 101.149 5.27695 101.891 5.61704C102.632 5.95797 103.258 6.43021 103.768 7.03458C104.276 7.63852 104.661 8.3619 104.919 9.20472C105.178 10.0471 105.308 10.9708 105.308 11.975V12.5878H96.6626C96.6794 13.2346 96.9687 13.8004 97.5299 14.2857C98.0901 14.7707 98.8625 15.0134 99.8465 15.0134C100.813 15.0134 101.597 14.8728 102.202 14.592C102.805 14.3112 103.245 14.0685 103.522 13.8643L105.049 16.1878Z" fill="currentColor"/>
       <path opacity="0.4" d="M107.215 5.51507H110.787L110.917 7.02155C111.227 6.61327 111.654 6.22194 112.197 5.84712C112.741 5.47272 113.444 5.28552 114.307 5.28552C114.635 5.28552 114.915 5.30246 115.148 5.33635C115.381 5.37065 115.61 5.43037 115.835 5.51507L115.239 8.758C114.859 8.63899 114.41 8.57928 113.893 8.57928C113.013 8.57928 112.301 8.8389 111.758 9.35772C111.214 9.87738 110.942 10.613 110.942 11.5668V17.4898H107.215V5.51507Z" fill="currentColor"/>
       <path opacity="0.4" d="M73.7227 0.473755H77.4892V3.76751H73.7227V0.473755Z" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function LogoMcDonalds() {
+  return (
+    <svg width="125" height="17" viewBox="0 0 125 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="McDonald's">
+      <g clipPath="url(#clip0_mcdonalds)">
+        <path opacity="0.4" d="M29.0889 7.51605C29.0527 7.00694 28.8222 6.53207 28.4463 6.19201C28.0704 5.85194 27.5785 5.67338 27.0749 5.69413C24.7654 5.69413 24.3895 7.66222 24.3895 9.40595C24.3895 11.0341 25.0944 12.7031 26.8432 12.7031C28.2799 12.7031 29.0083 11.8805 29.1929 10.548H33.221C32.8551 13.9166 30.2301 15.8574 26.8734 15.8574C23.0804 15.8574 20.2607 13.2639 20.2607 9.39915C20.2607 5.39841 22.8152 2.53638 26.8734 2.53638C30.012 2.53638 32.8081 4.18493 33.0968 7.50925L29.0889 7.51605Z" fill="currentColor"/>
+        <path opacity="0.4" d="M63.3164 2.90716H67.3243V4.68489H67.3747C68.1266 3.36264 69.3887 2.54346 71.1778 2.54346C75.3837 2.54346 75.8772 5.60264 75.8772 7.41776V15.494H71.7518V9.40624C71.7518 7.68629 71.829 5.93576 69.6841 5.93576C68.2407 5.93576 67.4485 7.12204 67.4485 8.96096V15.494H63.3164V2.90716Z" fill="currentColor"/>
+        <path opacity="0.4" d="M77.2612 6.78893C77.2626 6.10043 77.4461 5.42488 77.7926 4.8325C78.1391 4.24012 78.636 3.75253 79.2316 3.42042C80.3494 2.78819 81.8095 2.54346 83.2428 2.54346C86.2337 2.54346 89.1305 3.19948 89.1305 6.76174V12.2683C89.1305 13.3356 89.1305 14.5015 89.6172 15.494H85.4549C85.3272 15.11 85.2461 14.7116 85.2132 14.3077C84.1458 15.4226 82.5648 15.8577 81.0543 15.8577C78.6475 15.8577 76.751 14.6476 76.751 12.0507C76.751 7.95142 81.2255 8.26754 84.0954 7.68629C84.8004 7.54013 85.1897 7.29879 85.1897 6.5204C85.1897 5.57545 84.0484 5.21175 83.1958 5.21175C82.0512 5.21175 81.3228 5.72161 81.1281 6.78893H77.2612ZM82.6118 13.3118C84.5822 13.3118 85.2367 12.1969 85.1427 9.59999C84.5587 9.96709 83.4879 10.0385 82.5883 10.2798C81.6887 10.5211 80.8864 10.8882 80.8864 11.8808C80.8864 12.8733 81.6887 13.3118 82.6118 13.3118Z" fill="currentColor"/>
+        <path opacity="0.4" d="M90.4756 0.109131H94.6077V15.5002H90.4756V0.109131Z" fill="currentColor"/>
+        <path opacity="0.4" d="M108.589 15.4935H104.645V14.0454H104.598C104.219 14.6229 103.701 15.0929 103.092 15.4111C102.484 15.7293 101.805 15.8852 101.121 15.864C97.1598 15.864 95.4814 12.4649 95.4814 8.92639C95.4814 5.65306 97.2303 2.54968 100.805 2.54968C101.498 2.51673 102.189 2.65664 102.817 2.95712C103.444 3.2576 103.989 3.70946 104.404 4.27303H104.454V0.109131H108.589V15.4935ZM99.6135 9.06576C99.6135 10.7891 100.245 12.7028 102.144 12.7028C104.159 12.7028 104.598 10.7891 104.598 9.18812C104.598 7.3696 103.944 5.69385 102.144 5.69385C100.245 5.69385 99.6135 7.46818 99.6135 9.06576Z" fill="currentColor"/>
+        <path opacity="0.4" d="M111.381 4.2668H109.444V0.102905H113.311L111.381 4.2668Z" fill="currentColor"/>
+        <path opacity="0.4" d="M40.7188 0.109131H34.0859V15.5002H40.7188C45.4182 15.5002 48.2814 12.781 48.2814 7.74011C48.2848 2.96778 45.4551 0.109131 40.7188 0.109131ZM40.3428 11.9346H38.4866V3.67139H40.3428C42.7462 3.67139 43.8237 5.27236 43.8237 7.72311C43.8271 10.4186 42.9577 11.9278 40.3462 11.9278L40.3428 11.9346Z" fill="currentColor"/>
+        <path opacity="0.4" d="M12.3841 15.4945L14.0356 9.32512C14.2236 8.60451 14.4082 7.76154 14.4821 7.33325H14.5358C14.576 7.67316 14.7036 8.58752 14.8714 9.37271L16.0463 15.4911H20.5778L17.389 0.0761719H12.562L10.6286 7.81932C10.4641 8.42096 10.266 9.3897 10.1452 9.89956H10.0982C9.97737 9.3897 9.77933 8.42096 9.61821 7.81932L7.68474 0.0761719H2.85781L-0.331055 15.4911H4.22398L5.39547 9.37271C5.54988 8.58752 5.67408 7.67316 5.73114 7.33325H5.77478C5.84863 7.76154 6.03325 8.60451 6.21787 9.32512L7.87272 15.4945H12.3841Z" fill="currentColor"/>
+        <path opacity="0.4" d="M55.788 2.54346C51.713 2.54346 49.1484 5.42929 49.1484 9.21249C49.1484 12.9957 51.713 15.8815 55.788 15.8815C59.863 15.8815 62.4276 12.9957 62.4276 9.21249C62.4276 5.42929 59.8496 2.54346 55.788 2.54346ZM55.788 12.7408C53.9989 12.7408 53.2839 11.2384 53.2839 9.22268C53.2839 7.20702 53.9989 5.70462 55.788 5.70462C57.5771 5.70462 58.2921 7.20702 58.2921 9.22268C58.2921 11.2384 57.5738 12.7306 55.788 12.7306V12.7408Z" fill="currentColor"/>
+        <path opacity="0.4" d="M116.271 11.3471C116.264 11.619 116.321 11.8886 116.438 12.1335C116.555 12.3784 116.728 12.5913 116.943 12.7544C117.369 13.0553 117.88 13.2079 118.4 13.1894C119.192 13.1894 120.32 12.8495 120.32 11.857C120.32 10.8645 119.047 10.6911 118.329 10.5211C115.761 9.86512 112.438 9.79373 112.438 6.39803C112.438 3.36604 115.795 2.54346 118.232 2.54346C120.971 2.54346 123.824 3.34225 123.968 6.62238H120.148C120.165 6.40938 120.125 6.19576 120.032 6.00382C119.94 5.81189 119.798 5.64869 119.621 5.53127C119.245 5.30642 118.812 5.19773 118.376 5.21855C117.705 5.21855 116.624 5.28993 116.624 6.1635C116.624 7.35318 119.47 7.57072 121.323 7.98202C123.844 8.49188 124.492 10.3342 124.492 11.3811C124.492 14.7496 121.216 15.8679 118.41 15.8679C115.456 15.8679 112.431 14.8754 112.311 11.3573L116.271 11.3471Z" fill="currentColor"/>
+        <path opacity="0.4" d="M123.534 0.109184C123.728 0.109189 123.917 0.167378 124.078 0.276369C124.239 0.385361 124.364 0.540243 124.438 0.721381C124.511 0.902518 124.53 1.10175 124.492 1.29381C124.454 1.48586 124.36 1.6621 124.223 1.80015C124.085 1.93821 123.911 2.03188 123.721 2.06928C123.531 2.10667 123.334 2.08611 123.156 2.0102C122.978 1.93429 122.826 1.80645 122.719 1.6429C122.612 1.47934 122.556 1.28745 122.558 1.09153C122.557 0.961824 122.582 0.833321 122.631 0.713487C122.68 0.593653 122.752 0.484871 122.843 0.393473C122.934 0.302074 123.042 0.229874 123.161 0.18107C123.279 0.132267 123.406 0.107832 123.534 0.109184ZM123.534 1.9379C123.7 1.94467 123.864 1.90114 124.005 1.81287C124.147 1.72461 124.258 1.59565 124.327 1.44254C124.395 1.28943 124.417 1.11914 124.389 0.953544C124.361 0.787948 124.284 0.634594 124.17 0.513149C124.055 0.391703 123.907 0.30771 123.745 0.27195C123.583 0.236191 123.414 0.250292 123.26 0.312447C123.106 0.374603 122.974 0.481978 122.88 0.620791C122.787 0.759605 122.736 0.923532 122.736 1.09153C122.732 1.20019 122.75 1.30848 122.788 1.40998C122.827 1.51147 122.885 1.60411 122.96 1.68241C123.034 1.7607 123.123 1.82306 123.222 1.86578C123.321 1.90849 123.427 1.9307 123.534 1.9311V1.9379ZM123.155 0.51708H123.598C123.863 0.51708 123.994 0.625851 123.994 0.85699C123.997 0.897809 123.991 0.938667 123.977 0.976998C123.962 1.01533 123.941 1.0503 123.913 1.07968C123.885 1.10907 123.851 1.13225 123.813 1.14774C123.776 1.16324 123.736 1.17071 123.696 1.1697L124.031 1.67957H123.843L123.534 1.1833H123.346V1.67957H123.169L123.155 0.51708ZM123.333 1.03034H123.518C123.672 1.03034 123.816 1.03034 123.816 0.839988C123.816 0.649639 123.689 0.663239 123.568 0.663239H123.333V1.03034Z" fill="currentColor"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_mcdonalds">
+          <rect width="124.595" height="16.0768" fill="white"/>
+        </clipPath>
+      </defs>
     </svg>
   );
 }
@@ -102,6 +131,29 @@ function LogoKia() {
   );
 }
 
+function LogoPfizer() {
+  return (
+    <svg width="89" height="37" viewBox="0 0 89 37" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Pfizer">
+      <g clipPath="url(#clip0_pfizer)">
+        <path opacity="0.4" d="M1.72516 14.6296C2.7691 10.7771 7.11842 9.8613 11.1221 9.74787C14.415 9.65405 18.084 10.0938 18.084 10.0938L16.3599 16.4557C16.3599 16.4557 12.6894 16.016 9.39789 16.1098C5.39424 16.2232 1.04492 17.1391 0.000976562 20.9915L1.72516 14.6296Z" fill="currentColor"/>
+        <path opacity="0.4" d="M38.4997 11.4915L34.4238 26.5259H37.8486L39.3576 20.958H42.3326C45.6157 20.958 47.7939 19.1305 48.3825 16.5888C48.9322 14.2166 47.5593 11.4915 43.8818 11.4915C42.0869 11.4915 40.2933 11.4915 38.4997 11.4915ZM41.4441 13.2601H42.7615C44.14 13.2601 45.234 14.3734 44.9702 16.3116C44.7245 18.1082 42.7921 19.1851 41.1068 19.1851H39.8393L41.4441 13.2601Z" fill="currentColor"/>
+        <path opacity="0.4" d="M73.9209 16.1726C71.0417 16.1726 68.9636 18.6723 68.4652 21.1706C67.9863 23.5722 69.3509 26.7623 73.1074 26.7623C75.777 26.7623 77.1194 25.5761 77.1194 25.5761L76.5044 24.0455C76.5044 24.0455 75.3827 24.967 73.8182 24.967C72.2551 24.967 71.2736 23.722 71.4901 21.7363H77.8774C78.3327 20.567 78.5826 16.1726 73.9209 16.1726ZM73.9084 17.8321C75.6951 17.8321 75.2883 20.2127 75.2883 20.2127L71.7095 20.2043C71.7095 20.2043 72.3036 17.8321 73.9084 17.8321Z" fill="currentColor"/>
+        <path opacity="0.4" d="M49.7537 15.7921L44.123 36.5625H47.409L52.4011 18.1462H55.8133L53.5422 26.526H56.8267L59.5504 16.4769H52.8536C53.1965 15.2096 53.563 13.861 53.8615 12.7603C54.4126 10.7284 55.3122 9.25238 56.6199 9.30139C58.0664 9.3574 57.3307 10.3153 57.1321 11.0463C56.8587 12.0559 57.5986 13.0726 58.8938 13.0726C61.7091 13.0726 62.4032 7.8562 57.1321 7.8562C51.861 7.8562 50.5103 13.0054 49.7537 15.7921Z" fill="currentColor"/>
+        <path opacity="0.4" d="M60.7928 16.4772L60.3402 18.1464H64.5035L57.958 26.5263H67.2022L67.6548 24.857H62.957L69.5039 16.4772H60.7928Z" fill="currentColor"/>
+        <path opacity="0.4" d="M86.6504 16.3076C84.5084 16.3076 83.2451 18.5398 83.2451 18.5398L83.8046 16.4771H80.5186L77.7949 26.5262H81.0795C81.0795 26.5262 81.8708 23.5896 82.2734 22.1248C82.8953 19.8324 84.1627 18.3984 84.7722 18.3396C85.476 18.2709 85.4094 19.9836 86.7823 19.9836C88.8661 19.9836 89.3158 16.3076 86.6504 16.3076Z" fill="currentColor"/>
+        <path opacity="0.4" d="M26.7136 26.55C14.9331 25.8092 1.24234 19.677 1.72545 14.63L0.0998324 20.6264C-0.392989 25.7756 12.3065 31.8882 24.9894 32.9119L26.7136 26.55Z" fill="currentColor"/>
+        <path opacity="0.4" d="M30.9937 18.2829C29.9497 22.1354 25.6004 23.0512 21.5967 23.1646C18.3052 23.2585 14.6348 22.8187 14.6348 22.8187L16.3589 16.4568C16.3589 16.4568 20.0294 16.8966 23.3209 16.8027C27.3246 16.6893 31.6739 15.7735 32.7178 11.921L30.9937 18.2829Z" fill="currentColor"/>
+        <path opacity="0.4" d="M6.00977 6.36191C17.7903 7.10271 31.481 13.235 30.9979 18.2819L32.6235 12.2855C33.1163 7.13632 20.4168 1.02367 7.73395 0L6.00977 6.36191Z" fill="currentColor"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_pfizer">
+          <rect width="88.4912" height="36.5666" fill="white"/>
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
+
 function LogoAbbVie() {
   return (
     <svg width="90" height="29" viewBox="0 0 90 29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="AbbVie">
@@ -119,22 +171,29 @@ function LogoAbbVie() {
 
 export default function AboutSection() {
   return (
-    <section className="relative flex flex-col overflow-y-auto overflow-x-hidden">
+    <section className="relative flex flex-col overflow-x-clip overflow-y-visible">
       {/* ── Hero + Photo row ──────────────────────────────────── */}
-      <div className="relative mx-auto w-full max-w-[var(--max-w-desktop)] px-6 pt-[119px] md:px-20">
+      <div className="relative mx-auto w-full max-w-desktop px-6 pt-[119px] md:px-20 lg:px-[var(--container-padding-desktop)]">
         <div className="flex flex-col md:flex-row md:justify-between md:gap-[80px]">
           {/* Left: text content */}
           <div className="flex max-w-[637px] flex-col">
-            <h1 className="h1 text-[48px] leading-[1.1] md:text-[var(--font-size-7xl)] md:leading-[80px]">About Me</h1>
+            <h1 className="hero-reveal h1">About Me</h1>
 
-            <p className="p1 mt-8">
-              Starting with product discovery and ending with the final
-              performance testing, my designs will reach your audience and will
-              help to uncover true potential of the business highlighting it
-              among all competitors on the market.
+            <p className="hero-reveal hero-reveal-delay-1 p2 mt-8 md:max-w-[448px]">
+              I&apos;m a Senior Product Designer with 10 years of experience
+              designing SaaS platforms, healthcare products, AI tools, and
+              mobile apps for startups, mid-sized businesses, and Fortune 500
+              teams.
+              <span className="mt-1 block">
+                I define product structure, user flows, and scalable design
+                systems that bring clarity to new MVPs or strengthen existing
+                product architecture.
+              </span>
             </p>
 
-            <div className="mt-8">
+
+
+            <div className="hero-reveal hero-reveal-delay-2 mt-8">
               <Link href="mailto:torry.contact@gmail.com" className="btn-primary">
                 EMAIL ME
                 <svg
@@ -154,30 +213,38 @@ export default function AboutSection() {
               </Link>
             </div>
 
-            {/* Photo on mobile — above "Trusted by" */}
-            <div className="mt-10 flex flex-col items-center md:hidden">
-              <div className="relative h-[320px] w-[320px] overflow-hidden rounded-xl">
-                <Image
-                  src="/images/About/Light/Rectangle 78.png"
-                  alt="Victoria — Product Designer"
-                  fill
-                  className="object-cover"
-                  sizes="320px"
-                />
+            <RevealOnScroll>
+              {/* Photo on mobile — above "Trusted by" */}
+              <div
+                data-reveal
+                className="hero-reveal-scroll mt-10 flex flex-col items-center md:hidden"
+              >
+                <div className="relative h-[240px] w-[240px] overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/About/Light/avatar.jpeg"
+                    alt="Victoria — Product Designer"
+                    fill
+                    className="object-cover"
+                    sizes="320px"
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* 80px gap between button and trusted section */}
-            <p className="p2 mt-10 text-black/80 dark:text-white/80 md:mt-20">
-              TRUSTED BY 500+ CLIENTS
-            </p>
+              {/* 80px gap between button and trusted section */}
+              <p
+                data-reveal
+                className="hero-reveal-scroll hero-reveal-delay-4 mt-10 font-[family-name:var(--font-mono)] text-[12px] leading-[20px] tracking-[0.08em] text-[color:rgba(0,0,0,0.5)] dark:text-[color:rgba(255,255,255,0.5)] md:mt-20"
+              >
+                FEATURED CLIENTS
+              </p>
+            </RevealOnScroll>
           </div>
 
           {/* Right: photo + signature (desktop only) */}
           <div className="hidden md:flex flex-col items-start gap-6 shrink-0">
-            <div className="relative h-[384px] w-[384px] overflow-hidden rounded-xl">
+            <div className="relative h-[240px] w-[240px] overflow-hidden rounded-xl">
               <Image
-                src="/images/About/Light/Rectangle 78.png"
+                src="/images/About/Light/avatar.jpeg"
                 alt="Victoria — Product Designer"
                 fill
                 className="object-cover"
@@ -189,109 +256,177 @@ export default function AboutSection() {
         </div>
 
         {/* ── Client logos + signature row ────────────────────── */}
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex flex-wrap items-center gap-4 md:gap-9">
-            <span className="p2-bold whitespace-nowrap opacity-40">McDonald&apos;s</span>
-            <LogoDevSkiller />
-            <LogoKFC />
-            <span className="p2-bold whitespace-nowrap opacity-40">Pfizer</span>
-            <LogoKia />
-            <LogoAbbVie />
+        <RevealOnScroll>
+          <div
+            data-reveal
+            className="hero-reveal-scroll hero-reveal-delay-5 mt-6 flex flex-wrap items-center justify-between gap-4"
+          >
+            <div className="flex flex-wrap items-center gap-4 md:gap-9">
+              <LogoMcDonalds />
+              <LogoDevSkiller />
+              <LogoKFC />
+              <LogoPfizer />
+              <LogoKia />
+              <LogoAbbVie />
+            </div>
+            <Image
+              src="/images/About/signature.svg"
+              alt="Victoria's signature"
+              width={241}
+              height={64}
+              className="hidden lg:block dark:hidden"
+            />
+            <Image
+              src="/images/About/signature-dark.svg"
+              alt="Victoria's signature"
+              width={241}
+              height={64}
+              className="hidden dark:lg:block"
+            />
           </div>
-          <Image
-            src="/images/About/signature.svg"
-            alt="Victoria's signature"
-            width={241}
-            height={64}
-            className="hidden lg:block dark:hidden"
-          />
-          <Image
-            src="/images/About/signature-dark.svg"
-            alt="Victoria's signature"
-            width={241}
-            height={64}
-            className="hidden dark:lg:block"
-          />
-        </div>
+        </RevealOnScroll>
       </div>
 
       {/* ── Section divider ───────────────────────────────────── */}
-      <div className="mx-auto w-full max-w-[var(--max-w-desktop)] px-6 md:px-20">
-        <hr className="mt-12 border-t border-[color:rgba(0,0,0,0.1)] dark:border-[color:rgba(255,255,255,0.1)]" />
-      </div>
+      <RevealOnScroll>
+        <div
+          data-reveal
+          className="hero-reveal-scroll mx-auto w-full max-w-desktop px-6 md:px-20 lg:px-[var(--container-padding-desktop)]"
+        >
+          <hr className="mt-12 border-t border-[color:rgba(0,0,0,0.1)] dark:border-[color:rgba(255,255,255,0.1)]" />
+        </div>
+      </RevealOnScroll>
 
       {/* ── Services section ──────────────────────────────────── */}
-      <div className="mx-auto w-full max-w-[var(--max-w-desktop)] px-6 pt-12 md:px-20">
-        <h2 className="h2 text-[36px] leading-[1.2] md:text-[var(--font-size-5xl)] md:leading-[56px] mb-8">Services</h2>
+      <RevealOnScroll>
+        <div className="mx-auto w-full max-w-desktop px-6 pt-12 md:px-20 lg:px-[var(--container-padding-desktop)]">
+          <h2
+            data-reveal
+            className="hero-reveal-scroll hero-reveal-delay-7 h2 mb-8 text-[36px] leading-[1.2] md:text-[48px] md:leading-[48px]"
+          >
+            Services
+          </h2>
 
-        <div className="flex flex-col gap-2">
-          <div className="flex flex-wrap gap-4">
-            {servicesRow1.map((s) => (
-              <ServiceTag key={s.label} label={s.label} dotColor={s.dot} />
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-4">
-            {servicesRow2.map((s) => (
-              <ServiceTag key={s.label} label={s.label} dotColor={s.dot} />
-            ))}
+          <div data-reveal className="hero-reveal-scroll hero-reveal-delay-7">
+            <div className="services-marquee">
+              <div className="services-marquee-track">
+                {[0, 1].map((copy) => (
+                  <div key={copy} className="flex items-center gap-4">
+                    {services.map((s) => (
+                      <ServiceTag key={`${copy}-${s.label}`} label={s.label} dotColor={s.dot} />
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </RevealOnScroll>
 
       {/* ── Section divider ───────────────────────────────────── */}
-      <div className="mx-auto w-full max-w-[var(--max-w-desktop)] px-6 md:px-20">
-        <hr className="mt-12 border-t border-[color:rgba(0,0,0,0.1)] dark:border-[color:rgba(255,255,255,0.1)]" />
-      </div>
+      <RevealOnScroll>
+        <div
+          data-reveal
+          className="hero-reveal-scroll mx-auto w-full max-w-desktop px-6 md:px-20 lg:px-[var(--container-padding-desktop)]"
+        >
+          <hr className="mt-12 border-t border-[color:rgba(0,0,0,0.1)] dark:border-[color:rgba(255,255,255,0.1)]" />
+        </div>
+      </RevealOnScroll>
 
       {/* ── Design Process section ────────────────────────────── */}
-      <div className="mx-auto w-full max-w-[var(--max-w-desktop)] px-6 pt-12 pb-24 md:px-20">
-        <div className="flex flex-col gap-10 md:flex-row md:gap-20">
-          {/* Left column */}
-          <div className="flex w-full flex-col gap-6 md:w-[544px] md:shrink-0">
-            <div>
-              <h2 className="h2 md:!text-[72px] md:!leading-[1.1] min-[1000px]:h1 min-[1000px]:!text-[var(--font-size-5xl)] min-[1000px]:!leading-[56px]">Design Process,</h2>
-              <h2 className="h2 md:!text-[72px] md:!leading-[1.1] text-black dark:text-white min-[1000px]:h1 min-[1000px]:!text-[var(--font-size-5xl)] min-[1000px]:!leading-[56px]">Adapted as Needed.</h2>
-            </div>
-            <p className="p1 text-black dark:text-white">
-              Understanding the product, market, and users. Includes competitor
-              review, user context, and a clear project kickoff.
-            </p>
-
-            {/* Decorative gradient image */}
-            <div className="relative mt-4 h-[280px] w-full overflow-hidden rounded-2xl md:h-[340px] md:w-[384px]">
-              <Image
-                src="/images/source/image.png"
-                alt=""
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 384px"
-              />
-            </div>
+      <RevealOnScroll>
+        <div className="mx-auto w-full max-w-desktop px-6 pt-12 pb-24 md:px-20 lg:px-[var(--container-padding-desktop)]">
+          <div data-reveal className="hero-reveal-scroll">
+            <h2 className="h2">How I Work</h2>
           </div>
 
-          {/* Right column: steps */}
-          <div className="flex flex-1 flex-col">
-            {processSteps.map((step, i) => (
+          <div className="mt-8">
+            <hr className="border-[color:rgba(0,0,0,0.1)] dark:border-[color:rgba(255,255,255,0.1)]" />
+            {processSteps.map((step) => (
               <div
                 key={step.num}
-                className={`flex gap-6 py-6 ${
-                  i < processSteps.length - 1
-                    ? "border-b border-[color:rgba(0,0,0,0.1)] dark:border-[color:rgba(255,255,255,0.1)]"
-                    : ""
-                }`}
+                className="group relative border-b border-[color:rgba(0,0,0,0.1)] dark:border-[color:rgba(255,255,255,0.1)]"
               >
-                <span className="number-serif text-black dark:text-white">
-                  {step.num}
-                </span>
-                <div className="flex flex-col gap-1">
-                  <h3 className="h3">{step.title}</h3>
-                  <p className="p3 text-black dark:text-white">{step.desc}</p>
+                <div className="flex items-center gap-4 py-5">
+                  <span className="number-serif shrink-0 text-[color:rgba(0,0,0,0.4)] dark:text-[color:rgba(255,255,255,0.4)]">
+                    {step.num}
+                  </span>
+                  <h3 className="h3 flex-1">{step.title}</h3>
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[color:rgba(0,0,0,0.3)] dark:border-[color:rgba(255,255,255,0.3)]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="block group-hover:hidden stroke-current"
+                    >
+                      <path d="M12 5v14M5 12h14" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="hidden group-hover:block stroke-current"
+                    >
+                      <path d="M5 12h14" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="grid grid-rows-[0fr] transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr]">
+                  <div className="overflow-hidden">
+                    <p className="p3 pb-5 text-black dark:text-white md:max-w-[448px]">{step.desc}</p>
+                    {/* Video — mobile only, shown in expanded section */}
+                    <div className="mb-5 overflow-hidden rounded-[12px] md:hidden">
+                      <video
+                        className="w-full"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      >
+                        <source src={step.video} type={step.videoType} />
+                      </video>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hover video — desktop only */}
+                <div className="pointer-events-none absolute right-12 top-1/2 z-20 hidden -translate-y-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:block">
+                  <div className="relative h-[300px] w-[256px] overflow-hidden rounded-[12px] shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                    <video
+                      className="h-full w-full object-cover"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    >
+                      <source src={step.video} type={step.videoType} />
+                    </video>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
+
+          <div
+            data-reveal
+            className="hero-reveal-scroll mt-8 w-full rounded-[28px] bg-[#CFF5B5] p-8 text-black md:p-10"
+            style={{ "--hero-reveal-delay": `${processSteps.length * 150}ms` } as React.CSSProperties}
+          >
+            <h3 className="h3">Want to Get More?</h3>
+            <p className="p3 mt-3 text-black dark:!text-black md:max-w-[448px]">
+              I can prepare a fully working polished website or prototype
+              that allows you to validate ideas efficiently. Designs are
+              structured to support efficient development and reduce
+              rework.
+            </p>
+          </div>
         </div>
-      </div>
+      </RevealOnScroll>
+      <SiteFooter />
     </section>
   );
 }
