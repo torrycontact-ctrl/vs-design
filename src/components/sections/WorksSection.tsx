@@ -40,16 +40,18 @@ export default function WorksSection() {
   const trackRef = useRef<HTMLDivElement>(null);
   const pausedRef = useRef(false);
   const rafRef = useRef<number>(0);
+  const posRef = useRef(0);
 
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
 
     const tick = () => {
-      if (!pausedRef.current && el) {
-        el.scrollLeft += AUTO_SPEED;
+      if (!pausedRef.current) {
+        posRef.current += AUTO_SPEED;
         const half = el.scrollWidth / 2;
-        if (el.scrollLeft >= half) el.scrollLeft -= half;
+        if (posRef.current >= half) posRef.current -= half;
+        el.style.transform = `translateX(-${posRef.current}px)`;
       }
       rafRef.current = requestAnimationFrame(tick);
     };
@@ -60,8 +62,16 @@ export default function WorksSection() {
 
   const scroll = (dir: "left" | "right") => {
     pausedRef.current = true;
-    trackRef.current?.scrollBy({ left: dir === "left" ? -SCROLL_BY : SCROLL_BY, behavior: "smooth" });
-    setTimeout(() => { pausedRef.current = false; }, 1200);
+    posRef.current += dir === "left" ? -SCROLL_BY : SCROLL_BY;
+    if (posRef.current < 0) posRef.current = 0;
+    if (trackRef.current) {
+      trackRef.current.style.transition = "transform 0.5s ease";
+      trackRef.current.style.transform = `translateX(-${posRef.current}px)`;
+      setTimeout(() => {
+        if (trackRef.current) trackRef.current.style.transition = "none";
+        pausedRef.current = false;
+      }, 600);
+    }
   };
 
   return (
@@ -112,14 +122,14 @@ export default function WorksSection() {
         {/* Desktop: auto-scrolling marquee with arrow controls */}
         <div
           data-reveal
-          className="hero-reveal-scroll hero-reveal-delay-2 hidden lg:block mt-12 pb-24"
+          className="hero-reveal-scroll hero-reveal-delay-2 hidden lg:block mt-12 pb-24 overflow-hidden"
           onMouseEnter={() => { pausedRef.current = true; }}
           onMouseLeave={() => { pausedRef.current = false; }}
         >
           <div
             ref={trackRef}
-            className="flex gap-4 overflow-x-auto pl-[var(--container-padding-desktop)]"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" } as React.CSSProperties}
+            className="flex gap-4 pl-[var(--container-padding-desktop)]"
+            style={{ willChange: "transform" }}
           >
             {[...projects, ...projects].map((project, i) => (
               <Link
