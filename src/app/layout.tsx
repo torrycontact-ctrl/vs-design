@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif } from "next/font/google";
 import localFont from "next/font/local";
+import Script from "next/script";
 import Navbar from "@/components/layout/Navbar";
 import FooterWrapper from "@/components/layout/FooterWrapper";
 import HomeBackgroundWrapper from "@/components/layout/HomeBackgroundWrapper";
@@ -99,6 +100,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark ${ppNeueMontreal.variable} ${instrumentSerif.variable} ${splineSansMono.variable}`} suppressHydrationWarning>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0CRF1M4F2F"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0CRF1M4F2F');
+          `}
+        </Script>
+      </head>
       <body className="flex h-screen flex-col overflow-hidden antialiased text-[var(--color-fg)] transition-colors duration-300" suppressHydrationWarning>
         <script
           type="application/ld+json"
