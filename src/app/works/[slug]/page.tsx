@@ -165,7 +165,7 @@ items.push(
                     className="reveal-item mt-10 md:mt-[48px]"
                   >
                     {block.type === "single" && (
-                      <div className="w-full overflow-hidden rounded-3xl">
+                      <div className="w-full overflow-hidden rounded-xl">
                         <Image
                           src={block.images[0].src}
                           alt={block.images[0].alt}
@@ -178,11 +178,11 @@ items.push(
                     )}
 
                     {block.type === "double" && (
-                      <div className="flex flex-row gap-3 md:gap-[16px]">
+                      <div className="flex flex-col gap-3 md:flex-row md:gap-[16px]">
                         {block.images.map((img, k) => (
                           <div
                             key={k}
-                            className="w-[calc(50%-6px)] overflow-hidden rounded-3xl md:w-[calc(50%-8px)]"
+                            className="w-full overflow-hidden rounded-xl md:w-[calc(50%-8px)]"
                           >
                             <Image
                               src={img.src}
@@ -190,7 +190,7 @@ items.push(
                               width={img.width}
                               height={img.height}
                               style={{ width: "100%", height: "auto" }}
-                              sizes="(max-width: 768px) 50vw, 620px"
+                              sizes="(max-width: 768px) 100vw, 620px"
                             />
                           </div>
                         ))}
@@ -199,7 +199,7 @@ items.push(
 
                     {block.type === "beforeAfter" && block.images.length >= 2 && (
                       <div
-                        className="relative w-full overflow-hidden rounded-3xl"
+                        className="relative w-full overflow-hidden rounded-xl"
                         style={{ aspectRatio: `${block.images[0].width} / ${block.images[0].height}` }}
                       >
                         <BeforeAfterSlider
@@ -214,7 +214,7 @@ items.push(
                     )}
 
                     {block.type === "full" && (
-                      <div className="w-full overflow-hidden rounded-3xl">
+                      <div className="w-full overflow-hidden rounded-xl">
                         <Image
                           src={block.images[0].src}
                           alt={block.images[0].alt}
