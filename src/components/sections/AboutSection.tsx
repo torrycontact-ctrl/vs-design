@@ -241,7 +241,7 @@ export default function AboutSection() {
           </div>
 
           {/* Right: photo + signature (desktop only) */}
-          <div className="hidden md:flex flex-col items-start gap-6 shrink-0">
+          <div className="hidden md:flex flex-col items-start shrink-0" style={{ gap: 24 }}>
             <div className="relative h-[240px] w-[240px] overflow-hidden rounded-xl">
               <Image
                 src="/images/About/Light/avatar.jpeg"
@@ -252,6 +252,20 @@ export default function AboutSection() {
                 priority
               />
             </div>
+            <Image
+              src="/images/About/signature.svg"
+              alt="Victoria's signature"
+              width={241}
+              height={64}
+              className="dark:hidden"
+            />
+            <Image
+              src="/images/About/signature-dark.svg"
+              alt="Victoria's signature"
+              width={241}
+              height={64}
+              className="hidden dark:block"
+            />
           </div>
         </div>
 
@@ -269,20 +283,6 @@ export default function AboutSection() {
               <LogoKia />
               <LogoAbbVie />
             </div>
-            <Image
-              src="/images/About/signature.svg"
-              alt="Victoria's signature"
-              width={241}
-              height={64}
-              className="hidden lg:block dark:hidden"
-            />
-            <Image
-              src="/images/About/signature-dark.svg"
-              alt="Victoria's signature"
-              width={241}
-              height={64}
-              className="hidden dark:lg:block"
-            />
           </div>
         </RevealOnScroll>
       </div>

@@ -20,7 +20,7 @@ const slugMeta: Record<string, { title: string; description: string; og: string 
     og: "/og/og-astoria.jpg",
   },
   teams: {
-    title: "dot.Teams — SaaS CRM Redesign",
+    title: "Teams — SaaS CRM Redesign",
     description: "Case study: Redesigning a SaaS CRM platform from feature chaos to system-level clarity. 243 components, full design system, 6-month engagement.",
     og: "/og/og-teams.jpg",
   },
