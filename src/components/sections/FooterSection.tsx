@@ -19,7 +19,7 @@ export default function FooterSection() {
 
         {/* Copyright */}
         <p className="text-[14px] leading-[20px] text-[var(--color-gray-500)] dark:text-[var(--color-neutral-400)]">
-          © 2025. Crafted with love by Victoria Samoilenko
+          © 2026. Victoria Samoilenko
         </p>
       </div>
     </footer>

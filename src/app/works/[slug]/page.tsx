@@ -392,7 +392,7 @@ items.push(
                 ))}
               </div>
               <p className="text-[14px] leading-[20px] text-[var(--color-gray-700)]">
-                © 2026. Crafted with love by Victoria Samoilenko
+                © 2026. Victoria Samoilenko
               </p>
             </div>
           </div>

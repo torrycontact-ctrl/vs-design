@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function WorksPage() {
   return (
-    <main>
+    <main className="works-page">
       <WorksSection />
     </main>
   );
