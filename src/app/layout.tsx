@@ -47,6 +47,18 @@ const splineSansMono = localFont({
 export const metadata: Metadata = {
   title: "VS Design – Product Designer Portfolio",
   description: "Product Designer portfolio showcasing UX/UI case studies and design work.",
+  icons: {
+    icon: [
+      { url: "/images/favicons/favicon-26.png", sizes: "26x26", type: "image/png" },
+      { url: "/images/favicons/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/favicons/favicon-64.png", sizes: "64x64", type: "image/png" },
+      { url: "/images/favicons/favicon-128.png", sizes: "128x128", type: "image/png" },
+    ],
+    apple: [
+      { url: "/images/favicons/favicon-180.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/images/favicons/favicon-32.png",
+  },
 };
 
 export default function RootLayout({
