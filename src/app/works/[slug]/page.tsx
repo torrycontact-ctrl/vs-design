@@ -13,14 +13,65 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+const slugMeta: Record<string, { title: string; description: string; og: string }> = {
+  astoria: {
+    title: "Astoria Health — AI Clinic Platform",
+    description: "Case study: Designing a role-based AI clinic platform with three dashboards for front desk, nurse, and doctor workflows. Healthcare UX with AI voice transcription.",
+    og: "/og/og-astoria.jpg",
+  },
+  teams: {
+    title: "dot.Teams — SaaS CRM Redesign",
+    description: "Case study: Redesigning a SaaS CRM platform from feature chaos to system-level clarity. 243 components, full design system, 6-month engagement.",
+    og: "/og/og-teams.jpg",
+  },
+  qoria: {
+    title: "Qoria — Dance Competition App",
+    description: "Case study: Building a gamified dance competition app with structured voting mechanics, monetization flows, and community engagement loops.",
+    og: "/og/og-qoria.jpg",
+  },
+  recordless: {
+    title: "Recordless — AI Music Player",
+    description: "Case study: Designing an AI-powered music player that adapts to mood and activity. Mobile app UX with invisible AI and intuitive dark-mode interface.",
+    og: "/og/og-recordless.jpg",
+  },
+  invamia: {
+    title: "Invamia — Ad Platform Redesign",
+    description: "Case study: Redesigning an ad publishing platform for media owners. Dashboard UX, design system, and responsive design. 65% increase in user success rate.",
+    og: "/og/og-invamia.jpg",
+  },
+  ibnb: {
+    title: "iBNB — DeFi Finance App",
+    description: "Case study: Designing a DeFi finance app for daily dividend collection. Mobile, web, and dashboard redesign with clear financial UX.",
+    og: "/og/og-ibnb.jpg",
+  },
+  vidverto: {
+    title: "Vidverto — Ad-Tech Platform & Branding",
+    description: "Case study: Redesigning an enterprise ad-tech platform and building the brand identity. Website, pitch decks, social assets. 97% PageSpeed score.",
+    og: "/og/og-vidverto.jpg",
+  },
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) return { title: "Not Found" };
 
+  const meta = slugMeta[slug];
+  const title = meta?.title ?? `${project.title} — Product Design Case Study`;
+  const description = meta?.description ?? project.services;
+  const ogImage = meta?.og ?? "/og/og-home.jpg";
+  const url = `https://torry.design/works/${slug}`;
+
   return {
-    title: `${project.title} – VS Design`,
-    description: project.services,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${title} | Victoria Samoilenko`,
+      description,
+      url,
+      images: [{ url: ogImage, width: 1200, height: 630 }],
+    },
   };
 }
 
