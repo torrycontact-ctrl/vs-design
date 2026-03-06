@@ -41,7 +41,7 @@ export const projects: Project[] = [
     title: "Astoria Health",
     services: "Product design • SaaS • AI integration • Healthcare",
     thumbnail: "/images/Works/1.png",
-    heroImage: "/images/Work/Astoria/hero.png",
+    heroImage: "/images/Work/Astoria/hero-image.png",
     website: { label: "melodify.io", url: "https://melodify.io" },
     industry: "A role-based clinic platform built around how medical teams actually work.",
     timeline: "Oct 2025 – Feb 2026",
